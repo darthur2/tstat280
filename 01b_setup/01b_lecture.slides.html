@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>lecture_slides slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>01b_lecture slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7435,359 +7435,894 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f074f910-b24a-47b2-a58a-7948658bd030">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=810af5e1-f980-4d23-a41b-e7b561a72ab0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Pandas">Pandas<a class="anchor-link" href="#Pandas">¶</a></h1>
+<h2 id="The-Data-Science-Workbench">The Data Science Workbench<a class="anchor-link" href="#The-Data-Science-Workbench">¶</a></h2>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4c4a49ed-9265-441b-a9c8-2b3a24152912">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d7a7ef81-8c67-4e26-b9b9-490ed0f54b62">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-is-Pandas?">What is Pandas?<a class="anchor-link" href="#What-is-Pandas?">¶</a></h2><p><strong>Pandas</strong> is a Python library for working with structured data.</p>
-<p>It provides tools to:</p>
+<h2 id="Learning-Objectives">Learning Objectives<a class="anchor-link" href="#Learning-Objectives">¶</a></h2><ol>
+<li>Explain why version control software is important for a data science project</li>
+<li>Demonstrate a basic understanding of how to use version control software</li>
+<li>Explain why having a separate Python environment is useful</li>
+<li>Demonstrate a basic understanding of how to create a Python environment for a data science project</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=348cd892-aa60-4375-8c3d-2bef9113abd4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Common-Tools-in-the-Data-Science-Workbench">Common Tools in the Data Science Workbench<a class="anchor-link" href="#Common-Tools-in-the-Data-Science-Workbench">¶</a></h2><p>Data scientists use a variety of tools to <strong>write code, manage data, collaborate, and communicate results</strong>.</p>
+<p><strong>Common categories of tools</strong></p>
 <ul>
-<li>Read data from files and databases</li>
-<li>Explore and summarize datasets</li>
-<li>Clean and transform variables</li>
-<li>Perform data analysis</li>
+<li><strong>Programming languages</strong> – Python, R</li>
+<li><strong>Development environments</strong> – JupyterLab, VS Code</li>
+<li><strong>Version control</strong> – Git and GitHub</li>
+<li><strong>Command line tools</strong> – Terminal or PowerShell</li>
+<li><strong>Data science libraries</strong> – NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn</li>
 </ul>
-<p>The main data structure in Pandas is the <strong>DataFrame</strong>, which is similar to a spreadsheet or database table.</p>
+<p>These tools together form the <strong>data science workbench</strong> used to develop and run data science projects.</p>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=457102b6-1aa6-4dd8-a9ee-eb524e6daf11">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3da1e807-011b-4495-8c6a-315a9ce81126">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Reading-Files">Reading Files<a class="anchor-link" href="#Reading-Files">¶</a></h1>
+<h2 id="Version-Control">Version Control<a class="anchor-link" href="#Version-Control">¶</a></h2>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=391a3114-fc63-44a7-a6fa-71acbacd5cd8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c87435f6-7bf3-4a2c-884a-6b5f8f401dc6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Reading-CSV-Files">Reading CSV Files<a class="anchor-link" href="#Reading-CSV-Files">¶</a></h2><p>Reading CSV files means importing data stored in a CSV (Comma-Separated Values) file into Python. The <code>pd.read_csv</code> function reads the file and returns a <strong>DataFrame</strong>, allowing the data to be explored and analyzed in Python.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=07b1e9aa-805a-4393-af0e-726730c114a3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"social_media.csv"</span><span class="p">)</span>
-
-<span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>pandas.DataFrame</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=28329da3-85a9-4d7a-bbd9-029dbc1070ad">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Querying-SQL-Databases">Querying SQL Databases<a class="anchor-link" href="#Querying-SQL-Databases">¶</a></h2><p>Querying a SQL database means retrieving data from a database using SQL and loading it into Pandas. The <code>pd.read_sql</code> function runs a SQL query and returns the result as a <strong>DataFrame</strong>, allowing the data to be analyzed in Python.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e2ebe21f-6047-4e6a-99bb-c9f6e2365b3f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"../03_sql/movies.sqlite"</span><span class="p">)</span>
-
-<span class="n">df_sql</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT * FROM movies</span>
-<span class="s2">    LIMIT 10</span>
-<span class="s2">"""</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-
-<span class="nb">type</span><span class="p">(</span><span class="n">df_sql</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>pandas.DataFrame</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0de7ab49-18c4-4b7a-b639-c87d9e466937">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Inspecting-a-DataFrame">Inspecting a DataFrame<a class="anchor-link" href="#Inspecting-a-DataFrame">¶</a></h1>
+<h2 id="Git">Git<a class="anchor-link" href="#Git">¶</a></h2><p><strong>Git</strong> is a <strong>version control system</strong> used to track changes in code and collaborate with others.</p>
+<p><strong>What Git does:</strong></p>
+<ul>
+<li>Tracks changes to files over time</li>
+<li>Allows you to <strong>save versions</strong> of your work</li>
+<li>Helps teams <strong>collaborate on the same project</strong></li>
+</ul>
+<p><strong>Key concepts:</strong></p>
+<ul>
+<li><strong>Repository (repo):</strong> a project folder tracked by Git</li>
+<li><strong>Commit:</strong> a saved snapshot of changes</li>
+<li><strong>Push:</strong> upload changes to a remote repository</li>
+<li><strong>Pull:</strong> download updates from a remote repository</li>
+</ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9d29964c-b066-42e0-b47e-6ce143157ab1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c39e95ab-cd14-453f-bd90-e69d509bfb89">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Viewing-Column-Names">Viewing Column Names<a class="anchor-link" href="#Viewing-Column-Names">¶</a></h2><p>Viewing column names helps you see all variables available in a DataFrame. Running <code>df.columns</code> returns a list-like object containing the names of all columns in the dataset.</p>
+<h2 id="Why-Use-Version-Control-in-Data-Science?">Why Use Version Control in Data Science?<a class="anchor-link" href="#Why-Use-Version-Control-in-Data-Science?">¶</a></h2><p>Version control tools like Git help you manage and organize your work.</p>
+<ul>
+<li><strong>Track changes</strong> – Save versions and go back if something breaks</li>
+<li><strong>Experiment safely</strong> – Try new ideas without losing past work</li>
+<li><strong>Collaborate</strong> – Work with others without overwriting changes</li>
+<li><strong>Reproduce results</strong> – Keep a record of how results were created</li>
+</ul>
+<p><strong>In short:</strong> Version control keeps your work organized, safe, and reproducible.</p>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1148bac2-011b-4a9c-b66b-286c31f76536">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>Index(['Student_ID', 'Age', 'Gender', 'Academic_Level', 'Country',
-       'Avg_Daily_Usage_Hours', 'Most_Used_Platform',
-       'Affects_Academic_Performance', 'Sleep_Hours_Per_Night',
-       'Mental_Health_Score', 'Relationship_Status',
-       'Conflicts_Over_Social_Media', 'Addicted_Score'],
-      dtype='str')</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=98e02632-c2ec-4af1-ae7b-66e69edf6056">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8342b4d0-3799-4f2d-a72f-8073afdc0844">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Viewing-Top/Bottom-Rows">Viewing Top/Bottom Rows<a class="anchor-link" href="#Viewing-Top/Bottom-Rows">¶</a></h2><p>Viewing top or bottom rows allows you to quickly preview the data in a DataFrame. The functions <code>df.head()</code> and <code>df.tail()</code> return the first and last 5 rows and are useful for quickly checking what the dataset looks like.</p>
+<h2 id="GitHub">GitHub<a class="anchor-link" href="#GitHub">¶</a></h2><p><strong>GitHub</strong> is an online platform for <strong>hosting and collaborating on Git repositories</strong>.</p>
+<p><strong>What GitHub provides:</strong></p>
+<ul>
+<li>A place to <strong>store and share repositories</strong></li>
+<li>Tools for <strong>collaboration and code review</strong></li>
+<li>A way to <strong>track issues and project progress</strong></li>
+</ul>
+<p><strong>Common actions:</strong></p>
+<ul>
+<li><strong>Create repositories</strong> to store projects</li>
+<li><strong>Fork repositories</strong> to copy someone else's project</li>
+<li><strong>Clone repositories</strong> to work on them locally</li>
+<li><strong>Push changes</strong> from your computer to GitHub</li>
+</ul>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bafd36af-0cf0-4115-a599-682e656fe851">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb228698-cb1b-4dbd-954c-087fe954d438">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Creating-a-GitHub-Account">Creating a GitHub Account<a class="anchor-link" href="#Creating-a-GitHub-Account">¶</a></h2><p><strong>1. Go to GitHub</strong></p>
+<ul>
+<li><a href="https://github.com">https://github.com</a> → Click <strong>Sign up</strong></li>
+</ul>
+<p><strong>2. Create your account</strong></p>
+<ul>
+<li>Enter <strong>email, username, and password</strong></li>
+</ul>
+<p><strong>3. Verify your account</strong></p>
+<ul>
+<li>Complete the <strong>verification step</strong></li>
+</ul>
+<p><strong>4. Finish setup</strong></p>
+<ul>
+<li>Follow the prompts to complete your profile</li>
+</ul>
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=568f94c5-9721-4129-857e-4baae2553556">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-is-a-Repository?">What is a Repository?<a class="anchor-link" href="#What-is-a-Repository?">¶</a></h2><p>A <strong>repository (repo)</strong> is a folder that stores a project and its history using Git.</p>
+<p><strong>What a repository contains</strong></p>
+<ul>
+<li>Project <strong>files and code</strong></li>
+<li><strong>Version history</strong> of changes</li>
+<li>Documentation (often a <strong>README</strong> file)</li>
+</ul>
+<p><strong>Why repositories are useful</strong></p>
+<ul>
+<li>Track changes over time</li>
+<li>Collaborate with others</li>
+<li>Manage and organize projects</li>
+</ul>
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d2d0b2a1-9463-466e-ab4a-e07c7ea08bf8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Creating-a-GitHub-Repository">Creating a GitHub Repository<a class="anchor-link" href="#Creating-a-GitHub-Repository">¶</a></h2><p>A <strong>repository</strong> is where your project files and history are stored on GitHub.</p>
+<p><strong>Why create a repository</strong></p>
+<ul>
+<li>Store and organize <strong>project files</strong></li>
+<li><strong>Track changes</strong> with Git</li>
+<li><strong>Share or collaborate</strong> with others</li>
+</ul>
+<p><strong>How to create a repository</strong></p>
+<ol>
+<li>Click the <strong>+</strong> icon on GitHub</li>
+<li>Select <strong>New repository</strong></li>
+<li>Enter a <strong>repository name</strong></li>
+<li>Choose <strong>Public</strong> or <strong>Private</strong></li>
+<li>Click <strong>Create repository</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d6812faa-91da-4b6b-899f-372a3acc98c2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Creating-a-Repository-from-a-Template">Creating a Repository from a Template<a class="anchor-link" href="#Creating-a-Repository-from-a-Template">¶</a></h2><p>A <strong>template repository</strong> lets you create a <strong>new project that starts with existing files</strong>.</p>
+<p><strong>Why use a template</strong></p>
+<ul>
+<li>Start with <strong>pre-made project files</strong></li>
+<li>Keep your work <strong>separate from the original</strong></li>
+<li>Ensure everyone begins with the <strong>same materials</strong></li>
+</ul>
+<p><strong>How to create a repository from a template</strong></p>
+<ol>
+<li>Go to the <strong>template repository</strong></li>
+<li>Click <strong>Use this template</strong></li>
+<li>Select <strong>Create a new repository</strong></li>
+<li>Enter a <strong>repository name</strong></li>
+<li>Click <strong>Create repository</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ac03e91f-b110-49cb-b229-2de89f200af1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Adding-Someone-With-View-Access">Adding Someone With View Access<a class="anchor-link" href="#Adding-Someone-With-View-Access">¶</a></h2><p>You can allow someone to <strong>view your repository without editing it</strong>.</p>
+<p><strong>Why give view access</strong></p>
+<ul>
+<li>Let an instructor <strong>review your work</strong></li>
+<li>Share your project <strong>without allowing edits</strong></li>
+</ul>
+<p><strong>How to add view access</strong></p>
+<ol>
+<li>Go to your <strong>repository</strong></li>
+<li>Click <strong>Settings</strong></li>
+<li>Select <strong>Collaborators and teams</strong></li>
+<li>Click <strong>Add people</strong></li>
+<li>Enter the <strong>GitHub username</strong></li>
+<li>Set role to <strong>Read</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad4f78cc-6d44-4b15-b43a-edf61ada3c97">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="GitHub-Desktop">GitHub Desktop<a class="anchor-link" href="#GitHub-Desktop">¶</a></h2><p><strong>GitHub Desktop</strong> is a graphical application that makes it easier to work with <strong>Git and GitHub</strong>.</p>
+<p><strong>What it allows you to do</strong></p>
+<ul>
+<li>Clone repositories to your computer</li>
+<li>Track and commit file changes</li>
+<li>Push updates to GitHub</li>
+<li>Pull updates from a repository</li>
+</ul>
+<p><strong>Why use GitHub Desktop</strong></p>
+<ul>
+<li>No need to remember Git commands</li>
+<li>Simple interface for beginners</li>
+<li>Easy way to manage repositories</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86fd5899-33af-44d5-a672-3d10d859b2b2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Installing-GitHub-Desktop">Installing GitHub Desktop<a class="anchor-link" href="#Installing-GitHub-Desktop">¶</a></h2><p><strong>1. Download GitHub Desktop</strong></p>
+<ul>
+<li>Go to: <a href="https://desktop.github.com">https://desktop.github.com</a></li>
+</ul>
+<p><strong>2. Install the application</strong></p>
+<ul>
+<li>Download and run the installer</li>
+<li>Follow the setup instructions</li>
+</ul>
+<p><strong>3. Sign in to GitHub</strong></p>
+<ul>
+<li>Open <strong>GitHub Desktop</strong></li>
+<li>Sign in with your <strong>GitHub account</strong></li>
+</ul>
+<p>You can now <strong>clone and manage repositories</strong> from your computer.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca5e86d6-6a6a-4150-a431-9669d90fbb5c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Cloning-a-Repository-(GitHub-Desktop)">Cloning a Repository (GitHub Desktop)<a class="anchor-link" href="#Cloning-a-Repository-(GitHub-Desktop)">¶</a></h2><p><strong>Cloning</strong> creates a <strong>local copy of a repository</strong> on your computer.</p>
+<p><strong>Steps</strong></p>
+<ol>
+<li>Open <strong>GitHub Desktop</strong></li>
+<li>Click <strong>File → Clone Repository</strong></li>
+<li>Select the repository from the <strong>GitHub.com</strong> tab</li>
+<li>Choose the <strong>local folder</strong> where it will be saved</li>
+<li>Click <strong>Clone</strong></li>
+</ol>
+<p>You can now <strong>edit the project files locally</strong> on your computer.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=afc016fc-c40e-4962-9ec3-5537a9b753c5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Commit-and-Push">Commit and Push<a class="anchor-link" href="#Commit-and-Push">¶</a></h2><p><strong>Commit</strong></p>
+<ul>
+<li>A <strong>commit</strong> saves a snapshot of your changes in the repository.</li>
+<li>Each commit includes a <strong>message</strong> describing what changed.</li>
+</ul>
+<p><strong>Push</strong></p>
+<ul>
+<li><strong>Push</strong> sends your committed changes from your computer to <strong>GitHub</strong>.</li>
+</ul>
+<p><strong>Typical workflow</strong></p>
+<ol>
+<li>Make changes to files</li>
+<li><strong>Commit</strong> the changes in GitHub Desktop</li>
+<li><strong>Push</strong> the commits to GitHub</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8937a488-3655-4796-bce6-b3e58b8212ae">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Setting-Up-Python-Environment">Setting Up Python Environment<a class="anchor-link" href="#Setting-Up-Python-Environment">¶</a></h2>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b5d9f83-d335-4100-9313-2d3eb02d85e0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Python-and-Miniconda">Python and Miniconda<a class="anchor-link" href="#Python-and-Miniconda">¶</a></h2><p><strong>Python</strong></p>
+<ul>
+<li>Python is the programming language we will use in this course.</li>
+<li>It is widely used for data analysis, visualization, and machine learning.</li>
+</ul>
+<p><strong>Miniconda</strong></p>
+<ul>
+<li>Miniconda is a tool that installs and manages Python for us.</li>
+<li>It helps us set up a clean environment with the right version of Python and packages.</li>
+</ul>
+<p><strong>Key idea</strong></p>
+<ul>
+<li>We will use Miniconda to install and manage Python instead of installing Python manually.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92dd1efb-4d32-4a05-8ba4-a91ad198a7dc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Why-Use-Python-Environments?">Why Use Python Environments?<a class="anchor-link" href="#Why-Use-Python-Environments?">¶</a></h2><p>Python environments help you manage packages and dependencies for your projects.</p>
+<ul>
+<li><strong>Avoid conflicts</strong> – Different projects can use different package versions</li>
+<li><strong>Stay organized</strong> – Keep each project’s dependencies separate</li>
+<li><strong>Protect your system</strong> – Don’t break your main Python installation</li>
+<li><strong>Reproduce work</strong> – Share environments so others can run your code</li>
+</ul>
+<p><strong>In short:</strong> Python environments keep your projects isolated, stable, and reproducible.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1da49ea6-a362-4049-8ece-e1d4e301167d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Installing-Miniconda">Installing Miniconda<a class="anchor-link" href="#Installing-Miniconda">¶</a></h2><p><strong>Download Miniconda</strong></p>
+<ul>
+<li>Go to: <a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a></li>
+<li>Download the <strong>latest version</strong> for your operating system (Windows or macOS)</li>
+<li>Choose the <strong>64-bit installer</strong></li>
+</ul>
+<p><strong>Run the installer</strong></p>
+<ul>
+<li>Open the downloaded file</li>
+<li>Follow the setup steps using the <strong>default options</strong></li>
+<li>Complete the installation</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e2e6b655-5985-4535-9783-d82062aa79cc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Verifying-Installation">Verifying Installation<a class="anchor-link" href="#Verifying-Installation">¶</a></h2><p><strong>Open a terminal</strong></p>
+<ul>
+<li>Windows: Open <strong>Anaconda Prompt</strong></li>
+<li>Mac: Open <strong>Terminal</strong></li>
+</ul>
+<p><strong>Check Conda installation</strong></p>
+<ul>
+<li>Run:<ul>
+<li><code>conda --version</code></li>
+</ul>
+</li>
+<li>You should see a version number if installation was successful</li>
+</ul>
+<p><strong>(Windows only) Set up Conda for PowerShell</strong></p>
+<ul>
+<li>In Anaconda Prompt, run:<ul>
+<li><code>conda init powershell</code></li>
+</ul>
+</li>
+<li>Close and reopen PowerShell before using Conda</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0715b302-0468-41ad-8ebd-b45290bae4ac">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-is-a-Terminal?">What is a Terminal?<a class="anchor-link" href="#What-is-a-Terminal?">¶</a></h2><p>A <strong>terminal</strong> is a program that lets you interact with your computer using <strong>text commands</strong>.</p>
+<p><strong>What it is used for</strong></p>
+<ul>
+<li>Running programs</li>
+<li>Navigating files and folders</li>
+<li>Managing software and environments</li>
+<li>Executing commands for tools like Python or Git</li>
+</ul>
+<p><strong>Examples</strong></p>
+<ul>
+<li><strong>Windows:</strong> PowerShell or Command Prompt</li>
+<li><strong>Mac/Linux:</strong> Terminal</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de78dd19-6983-4752-bc91-ed0eba750cf9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Opening-PowerShell-(Windows)">Opening PowerShell (Windows)<a class="anchor-link" href="#Opening-PowerShell-(Windows)">¶</a></h2><p><strong>Method 1</strong></p>
+<ol>
+<li>Click the <strong>Start menu</strong></li>
+<li>Type <strong>PowerShell</strong></li>
+<li>Click <strong>Windows PowerShell</strong></li>
+</ol>
+<p><strong>Method 2</strong></p>
+<ol>
+<li>Press <strong>Windows Key + X</strong></li>
+<li>Select <strong>Windows Terminal</strong> or <strong>PowerShell</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e66b5fe6-ed8f-4dcc-9db2-a4354d72165b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Opening-the-Terminal-(Mac)">Opening the Terminal (Mac)<a class="anchor-link" href="#Opening-the-Terminal-(Mac)">¶</a></h2><p><strong>Method 1</strong></p>
+<ol>
+<li>Press <strong>Command + Space</strong> to open Spotlight</li>
+<li>Type <strong>Terminal</strong></li>
+<li>Press <strong>Enter</strong></li>
+</ol>
+<p><strong>Method 2</strong></p>
+<ol>
+<li>Open <strong>Finder</strong></li>
+<li>Go to <strong>Applications → Utilities</strong></li>
+<li>Click <strong>Terminal</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6bd4f64c-f114-41e5-a71d-34a85d67464d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Basic-Terminal-Commands">Basic Terminal Commands<a class="anchor-link" href="#Basic-Terminal-Commands">¶</a></h2><p><strong>ls</strong></p>
+<ul>
+<li>Lists the <strong>files and folders</strong> in the current directory</li>
+</ul>
+<p><strong>cd</strong></p>
+<ul>
+<li>Changes the <strong>current directory (folder)</strong></li>
+<li>Example: <code>cd Documents</code></li>
+</ul>
+<p><strong>pwd</strong></p>
+<ul>
+<li>Shows the <strong>current directory path</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ece54d73-66c4-4bd1-a12e-a7d00be987e1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-is-a-Python-Library?">What is a Python Library?<a class="anchor-link" href="#What-is-a-Python-Library?">¶</a></h2><p>A <strong>Python library</strong> is a collection of <strong>pre-written code</strong> that you can use in your programs.</p>
+<p><strong>Why libraries are useful</strong></p>
+<ul>
+<li>Provide tools for <strong>common tasks</strong></li>
+<li>Save time by reusing existing code</li>
+<li>Add powerful features to Python</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=36635cb2-46f1-4e1a-ae97-b37e24e43e12">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Common-Python-Libraries-for-Data-Science">Common Python Libraries for Data Science<a class="anchor-link" href="#Common-Python-Libraries-for-Data-Science">¶</a></h2><table>
 <thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Avg_Daily_Usage_Hours</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep_Hours_Per_Night</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Documentation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>0</th>
-<td>1</td>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Bangladesh</td>
-<td>5.2</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>6.5</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>3</td>
-<td>8</td>
+<td>NumPy</td>
+<td>Numerical computing with arrays</td>
+<td><a href="https://numpy.org/doc/">https://numpy.org/doc/</a></td>
 </tr>
 <tr>
-<th>1</th>
-<td>2</td>
-<td>22</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>India</td>
-<td>2.1</td>
-<td>Twitter</td>
-<td>No</td>
-<td>7.5</td>
-<td>8</td>
-<td>Single</td>
-<td>0</td>
-<td>3</td>
+<td>Pandas</td>
+<td>Working with datasets and tables</td>
+<td><a href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a></td>
 </tr>
 <tr>
-<th>2</th>
-<td>3</td>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>6.0</td>
-<td>TikTok</td>
-<td>Yes</td>
-<td>5.0</td>
-<td>5</td>
-<td>Complicated</td>
-<td>4</td>
-<td>9</td>
+<td>Matplotlib</td>
+<td>Creating basic visualizations</td>
+<td><a href="https://matplotlib.org/stable/users/index.html">https://matplotlib.org/stable/users/index.html</a></td>
 </tr>
 <tr>
-<th>3</th>
-<td>4</td>
-<td>18</td>
-<td>Male</td>
-<td>High School</td>
-<td>UK</td>
-<td>3.0</td>
-<td>YouTube</td>
-<td>No</td>
-<td>7.0</td>
-<td>7</td>
-<td>Single</td>
-<td>1</td>
-<td>4</td>
+<td>Seaborn</td>
+<td>Statistical data visualizations</td>
+<td><a href="https://seaborn.pydata.org/">https://seaborn.pydata.org/</a></td>
 </tr>
 <tr>
-<th>4</th>
-<td>5</td>
-<td>21</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Canada</td>
-<td>4.5</td>
-<td>Facebook</td>
-<td>Yes</td>
-<td>6.0</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>2</td>
-<td>7</td>
+<td>Scikit-Learn</td>
+<td>Machine learning tools</td>
+<td><a href="https://scikit-learn.org/stable/documentation.html">https://scikit-learn.org/stable/documentation.html</a></td>
+</tr>
+<tr>
+<td>JupyterLab</td>
+<td>Environment for writing and running code</td>
+<td><a href="https://jupyterlab.readthedocs.io/">https://jupyterlab.readthedocs.io/</a></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92102321-531c-4838-b5a0-7a86324ab7e8">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=06cfdc32-1446-4135-9c07-805a58d6f3ae">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Viewing-Column-Information">Viewing Column Information<a class="anchor-link" href="#Viewing-Column-Information">¶</a></h2><p>Viewing column information helps you understand the structure of a dataset. This can be done with <code>df.info()</code> which provides names, data types, and other basic information for each column.</p>
+<h2 id="Creating-the-Course-Environment">Creating the Course Environment<a class="anchor-link" href="#Creating-the-Course-Environment">¶</a></h2><p><strong>Navigate to your course folder</strong></p>
+<ul>
+<li>Use <code>cd</code> to move into the repository you cloned</li>
+</ul>
+<p><strong>Create the environment</strong></p>
+<ul>
+<li>Run:<ul>
+<li><code>conda env create -f environment.yml</code></li>
+</ul>
+</li>
+<li>This installs Python and all required packages</li>
+</ul>
+<p><strong>Activate the environment</strong></p>
+<ul>
+<li>Run:<ul>
+<li><code>conda activate tstat280</code></li>
+</ul>
+</li>
+<li>Your terminal should now show <code>tstat280</code></li>
+</ul>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=81194d9a-74a5-45e5-9de6-943260865bee">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc3c7e78-24e8-4487-97fd-8c91f3d222d5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-Happens-When-You-Create-an-Environment?">What Happens When You Create an Environment?<a class="anchor-link" href="#What-Happens-When-You-Create-an-Environment?">¶</a></h2><p>When you create a conda environment:</p>
+<ul>
+<li><strong>A separate Python installation is created</strong> just for this project</li>
+<li><strong>Specified packages are installed</strong> (from <code>environment.yml</code>)</li>
+<li><strong>Everything is isolated</strong> from your other projects and system Python</li>
+</ul>
+<p>When you activate the environment:</p>
+<ul>
+<li>Your terminal switches to use this specific Python and its packages</li>
+</ul>
+<p><strong>In short:</strong> You’re creating a self-contained workspace with its own Python and libraries.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bec7c1a8-a47a-4552-9382-86fd448812c0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Managing-the-Environment">Managing the Environment<a class="anchor-link" href="#Managing-the-Environment">¶</a></h2><p><strong>Activate the environment</strong></p>
+<ul>
+<li>Run:<ul>
+<li><code>conda activate tstat280</code></li>
+</ul>
+</li>
+<li>Use this every time before working on the course</li>
+</ul>
+<p><strong>Deactivate the environment</strong></p>
+<ul>
+<li>Run:<ul>
+<li><code>conda deactivate</code></li>
+</ul>
+</li>
+<li>Returns you to your normal system environment</li>
+</ul>
+<p><strong>Reinstall (start over if needed)</strong></p>
+<ul>
+<li>If something breaks, run:<ul>
+<li><code>conda remove -n tstat280 --all</code></li>
+<li><code>conda env create -f environment.yml</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Key idea</strong></p>
+<ul>
+<li>Environments can be safely deleted and recreated at any time</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fea5a948-7a13-4d61-a2f9-84261e49625c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="JupyterLab-for-Data-Science">JupyterLab for Data Science<a class="anchor-link" href="#JupyterLab-for-Data-Science">¶</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=27e77ba9-9ffb-42fa-ba9c-d5770f932537">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="JupyterLab">JupyterLab<a class="anchor-link" href="#JupyterLab">¶</a></h2><p><strong>JupyterLab</strong> is an interactive environment for writing and running code.</p>
+<p><strong>Key features</strong></p>
+<ul>
+<li>Run <strong>Python code in cells</strong></li>
+<li>Write <strong>notes with Markdown</strong></li>
+<li>Display <strong>tables, charts, and results</strong></li>
+<li>Combine <strong>code, output, and explanations</strong> in one document</li>
+</ul>
+<p>JupyterLab is commonly used for <strong>data analysis, visualization, and teaching</strong>.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af6322f0-85b5-4a2e-b449-2a0bf217d460">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Running-JupyterLab-Locally">Running JupyterLab Locally<a class="anchor-link" href="#Running-JupyterLab-Locally">¶</a></h2><p><strong>1. Open a terminal</strong></p>
+<ul>
+<li>PowerShell (Windows) or Terminal (Mac)</li>
+</ul>
+<p><strong>2. Navigate to your project folder</strong></p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/your/project
+</pre></div>
+<p><strong>3. Start Jupyter Lab</strong></p>
+<div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b382192b-3041-417f-9911-ed6a1b844f32">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Jupyter-Notebooks">Jupyter Notebooks<a class="anchor-link" href="#Jupyter-Notebooks">¶</a></h2><p>A <strong>Jupyter Notebook</strong> is an interactive document used for <strong>writing code, displaying results, and adding explanations</strong>.</p>
+<p><strong>Key features</strong></p>
+<ul>
+<li>Run <strong>Python code in cells</strong></li>
+<li>Write <strong>formatted text with Markdown</strong></li>
+<li>Display <strong>tables, charts, and outputs</strong></li>
+<li>Combine <strong>analysis, code, and documentation</strong> in one file</li>
+</ul>
+<p>Jupyter Notebooks are commonly used for <strong>data analysis, experiments, and teaching</strong>.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5df86223-7e25-4f1a-a1f4-c8cc01dbb24b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Markdown-Cells">Markdown Cells<a class="anchor-link" href="#Markdown-Cells">¶</a></h2><p>A <strong>Markdown cell</strong> lets you write <strong>formatted text</strong> in a Jupyter Notebook.</p>
+<p><strong>Used for</strong></p>
+<ul>
+<li>Explanations and notes</li>
+<li>Section headings</li>
+<li>Lists and links</li>
+<li>Formatted text using <strong>Markdown syntax</strong></li>
+</ul>
+<p><strong>Learn more about Markdown</strong></p>
+<ul>
+<li><a href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fd43e8d6-3aea-4a99-b43f-537539c1cac2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Markdown-Examples">Markdown Examples<a class="anchor-link" href="#Markdown-Examples">¶</a></h2><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Markdown</th>
+<th>Rendered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heading</td>
+<td><code>## Heading</code></td>
+<td>## Heading</td>
+</tr>
+<tr>
+<td>Bold</td>
+<td><code>**bold text**</code></td>
+<td><strong>bold text</strong></td>
+</tr>
+<tr>
+<td>Italic</td>
+<td><code>*italic text*</code></td>
+<td><em>italic text</em></td>
+</tr>
+<tr>
+<td>Inline code</td>
+<td><code>`print("Hello")`</code></td>
+<td><code>print("Hello")</code></td>
+</tr>
+<tr>
+<td>List</td>
+<td><code>- Item 1</code></td>
+<td>• Item 1</td>
+</tr>
+<tr>
+<td>Inline equation</td>
+<td><code>$E = mc^2$</code></td>
+<td>$E = mc^2$</td>
+</tr>
+<tr>
+<td>Centered equation</td>
+<td><code>$$E = mc^2$$</code></td>
+<td>$$E = mc^2$$</td>
+</tr>
+</tbody>
+</table>
+<p><code>```python print("Hello")```</code></p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d15395ec-6369-420c-b939-8f67dd522957">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Code-Cells">Code Cells<a class="anchor-link" href="#Code-Cells">¶</a></h2><p>A <strong>code cell</strong> is used to write and run <strong>Python code</strong> in a Jupyter Notebook.</p>
+<p><strong>Key features</strong></p>
+<ul>
+<li>Execute Python code <strong>one cell at a time</strong></li>
+<li>Display <strong>output directly below the cell</strong></li>
+<li>Can produce <strong>tables, charts, and results</strong></li>
+</ul>
+<p>Code cells allow you to <strong>run, test, and modify code interactively</strong>.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bd5053de-6da7-46d7-ad98-72ba9a1da4a0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Code-Cell-Example">Code Cell Example<a class="anchor-link" href="#Code-Cell-Example">¶</a></h2><p>Example Python code you might run in a Jupyter Notebook:</p>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5f79c3fa-44f4-4dfa-b9fc-c15edbcd994e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">"Hello, data science!"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7800,2616 +8335,8 @@ main {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'pandas.DataFrame'&gt;
-RangeIndex: 705 entries, 0 to 704
-Data columns (total 13 columns):
- #   Column                        Non-Null Count  Dtype  
----  ------                        --------------  -----  
- 0   Student_ID                    705 non-null    int64  
- 1   Age                           705 non-null    int64  
- 2   Gender                        705 non-null    str    
- 3   Academic_Level                705 non-null    str    
- 4   Country                       705 non-null    str    
- 5   Avg_Daily_Usage_Hours         705 non-null    float64
- 6   Most_Used_Platform            705 non-null    str    
- 7   Affects_Academic_Performance  705 non-null    str    
- 8   Sleep_Hours_Per_Night         705 non-null    float64
- 9   Mental_Health_Score           705 non-null    int64  
- 10  Relationship_Status           705 non-null    str    
- 11  Conflicts_Over_Social_Media   705 non-null    int64  
- 12  Addicted_Score                705 non-null    int64  
-dtypes: float64(2), int64(5), str(6)
-memory usage: 71.7 KB
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=19fcefea-4c52-4e99-a7da-5cee64da03f4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Viewing-Numeric-Summaries">Viewing Numeric Summaries<a class="anchor-link" href="#Viewing-Numeric-Summaries">¶</a></h2><p>Viewing numeric summaries helps you quickly understand the distribution of numeric variables. The <code>df.describe()</code> function allows you to see counts, means, and more for each numeric variable.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2b39bce1-a0e4-4a8a-8020-f01b68732878">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Avg_Daily_Usage_Hours</th>
-<th>Sleep_Hours_Per_Night</th>
-<th>Mental_Health_Score</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>count</th>
-<td>705.000000</td>
-<td>705.000000</td>
-<td>705.000000</td>
-<td>705.000000</td>
-<td>705.000000</td>
-<td>705.000000</td>
-<td>705.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>353.000000</td>
-<td>20.659574</td>
-<td>4.918723</td>
-<td>6.868936</td>
-<td>6.226950</td>
-<td>2.849645</td>
-<td>6.436879</td>
-</tr>
-<tr>
-<th>std</th>
-<td>203.660256</td>
-<td>1.399217</td>
-<td>1.257395</td>
-<td>1.126848</td>
-<td>1.105055</td>
-<td>0.957968</td>
-<td>1.587165</td>
-</tr>
-<tr>
-<th>min</th>
-<td>1.000000</td>
-<td>18.000000</td>
-<td>1.500000</td>
-<td>3.800000</td>
-<td>4.000000</td>
-<td>0.000000</td>
-<td>2.000000</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>177.000000</td>
-<td>19.000000</td>
-<td>4.100000</td>
-<td>6.000000</td>
-<td>5.000000</td>
-<td>2.000000</td>
-<td>5.000000</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>353.000000</td>
-<td>21.000000</td>
-<td>4.800000</td>
-<td>6.900000</td>
-<td>6.000000</td>
-<td>3.000000</td>
-<td>7.000000</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>529.000000</td>
-<td>22.000000</td>
-<td>5.800000</td>
-<td>7.700000</td>
-<td>7.000000</td>
-<td>4.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>max</th>
-<td>705.000000</td>
-<td>24.000000</td>
-<td>8.500000</td>
-<td>9.600000</td>
-<td>9.000000</td>
-<td>5.000000</td>
-<td>9.000000</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9caece4d-a42f-45d2-905a-a23de738e72d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Seeing-Unique-Values">Seeing Unique Values<a class="anchor-link" href="#Seeing-Unique-Values">¶</a></h2><p>Seeing unique values helps you identify all distinct values that appear in a column. This can be done with <code>df["column"].unique()</code> and is especially useful for exploring <strong>categorical variables</strong>.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5cbe105a-69d0-43db-a8af-6cb7c00eef23">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Relationship_Status"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Academic_Level"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;StringArray&gt;
-['In Relationship', 'Single', 'Complicated']
-Length: 3, dtype: str
-&lt;StringArray&gt;
-['Undergraduate', 'Graduate', 'High School']
-Length: 3, dtype: str
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de17d984-a53f-49fe-a01a-68ebeb3454f8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Filtering-and-Indexing">Filtering and Indexing<a class="anchor-link" href="#Filtering-and-Indexing">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=064862fe-91e1-46f5-b175-d754db3a3d36">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-a-Column">Selecting a Column<a class="anchor-link" href="#Selecting-a-Column">¶</a></h2><p>Selecting a column means extracting a single variable from a DataFrame. A column can be selected using <code>df["column"]</code>, which returns the selected column as a <strong>Series</strong>, allowing you to analyze or transform that variable.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e38814a8-6846-4c4c-9603-3aa2431b595f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"Country"</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0    Bangladesh
-1         India
-2           USA
-3            UK
-4        Canada
-Name: Country, dtype: str</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=59b05529-c5ec-4910-b4b0-4ae26eb744fc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-Multiple-Columns">Selecting Multiple Columns<a class="anchor-link" href="#Selecting-Multiple-Columns">¶</a></h2><p>Selecting multiple columns allows you to extract more than one variable from a DataFrame at the same time. This is commonly done using <code>df[["column1"], ["column2"]]</code>.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c4cecc51-6853-44b3-a243-df7c53778b72">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">"Age"</span><span class="p">,</span> <span class="s2">"Academic_Level"</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Age</th>
-<th>Academic_Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>19</td>
-<td>Undergraduate</td>
-</tr>
-<tr>
-<th>1</th>
-<td>22</td>
-<td>Graduate</td>
-</tr>
-<tr>
-<th>2</th>
-<td>20</td>
-<td>Undergraduate</td>
-</tr>
-<tr>
-<th>3</th>
-<td>18</td>
-<td>High School</td>
-</tr>
-<tr>
-<th>4</th>
-<td>21</td>
-<td>Graduate</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f93e102c-de56-445e-9130-21a278e61c13">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-by-Row's-Name">Selecting by Row's Name<a class="anchor-link" href="#Selecting-by-Row's-Name">¶</a></h2><p>Selecting by a row's name allows you to access a specific row using its label (index name). This can be done with <code>df.loc[row_index]</code></p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6b6430b1-16e1-4597-a169-cd389e4b142d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Avg_Daily_Usage_Hours</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep_Hours_Per_Night</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>5</th>
-<td>6</td>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Australia</td>
-<td>7.2</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>4.5</td>
-<td>4</td>
-<td>Complicated</td>
-<td>5</td>
-<td>9</td>
-</tr>
-<tr>
-<th>6</th>
-<td>7</td>
-<td>23</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Germany</td>
-<td>1.5</td>
-<td>LinkedIn</td>
-<td>No</td>
-<td>8.0</td>
-<td>9</td>
-<td>Single</td>
-<td>0</td>
-<td>2</td>
-</tr>
-<tr>
-<th>7</th>
-<td>8</td>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Brazil</td>
-<td>5.8</td>
-<td>Snapchat</td>
-<td>Yes</td>
-<td>6.0</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>2</td>
-<td>8</td>
-</tr>
-<tr>
-<th>8</th>
-<td>9</td>
-<td>18</td>
-<td>Male</td>
-<td>High School</td>
-<td>Japan</td>
-<td>4.0</td>
-<td>TikTok</td>
-<td>No</td>
-<td>6.5</td>
-<td>7</td>
-<td>Single</td>
-<td>1</td>
-<td>5</td>
-</tr>
-<tr>
-<th>9</th>
-<td>10</td>
-<td>21</td>
-<td>Female</td>
-<td>Graduate</td>
-<td>South Korea</td>
-<td>3.3</td>
-<td>Instagram</td>
-<td>No</td>
-<td>7.0</td>
-<td>7</td>
-<td>In Relationship</td>
-<td>1</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=972937b9-8ee1-43aa-9b44-7edc8f6482ae">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-Rows-and-Columns-by-Name">Selecting Rows and Columns by Name<a class="anchor-link" href="#Selecting-Rows-and-Columns-by-Name">¶</a></h2><p>You can select a specific row and column using their labels with <code>.loc</code>. This can be done by <code>df.loc["row_name", "column_name"]</code></p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b033bd39-5ee2-4864-b1ca-7bf754478a42">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Age"</span><span class="p">,</span> <span class="s2">"Most_Used_Platform"</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Age</th>
-<th>Most_Used_Platform</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>5</th>
-<td>19</td>
-<td>Instagram</td>
-</tr>
-<tr>
-<th>6</th>
-<td>23</td>
-<td>LinkedIn</td>
-</tr>
-<tr>
-<th>7</th>
-<td>20</td>
-<td>Snapchat</td>
-</tr>
-<tr>
-<th>8</th>
-<td>18</td>
-<td>TikTok</td>
-</tr>
-<tr>
-<th>9</th>
-<td>21</td>
-<td>Instagram</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86da5888-c7e1-4f95-ad8f-9ae76bfc3d50">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-a-Row-by-Index">Selecting a Row by Index<a class="anchor-link" href="#Selecting-a-Row-by-Index">¶</a></h2><p>You can select a row based on its numeric position in the DataFrame using <code>.iloc</code>. This can be done with <code>df.iloc[index]</code>.</p>
-<p>This returns the row located at the specified index position.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d740be61-d08c-4b1e-888b-46f55a585600">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Avg_Daily_Usage_Hours</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep_Hours_Per_Night</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>5</th>
-<td>6</td>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Australia</td>
-<td>7.2</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>4.5</td>
-<td>4</td>
-<td>Complicated</td>
-<td>5</td>
-<td>9</td>
-</tr>
-<tr>
-<th>6</th>
-<td>7</td>
-<td>23</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Germany</td>
-<td>1.5</td>
-<td>LinkedIn</td>
-<td>No</td>
-<td>8.0</td>
-<td>9</td>
-<td>Single</td>
-<td>0</td>
-<td>2</td>
-</tr>
-<tr>
-<th>7</th>
-<td>8</td>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Brazil</td>
-<td>5.8</td>
-<td>Snapchat</td>
-<td>Yes</td>
-<td>6.0</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>2</td>
-<td>8</td>
-</tr>
-<tr>
-<th>8</th>
-<td>9</td>
-<td>18</td>
-<td>Male</td>
-<td>High School</td>
-<td>Japan</td>
-<td>4.0</td>
-<td>TikTok</td>
-<td>No</td>
-<td>6.5</td>
-<td>7</td>
-<td>Single</td>
-<td>1</td>
-<td>5</td>
-</tr>
-<tr>
-<th>9</th>
-<td>10</td>
-<td>21</td>
-<td>Female</td>
-<td>Graduate</td>
-<td>South Korea</td>
-<td>3.3</td>
-<td>Instagram</td>
-<td>No</td>
-<td>7.0</td>
-<td>7</td>
-<td>In Relationship</td>
-<td>1</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=965207d5-cfb6-415f-9eee-ff58aaae0300">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-a-Column-by-Index">Selecting a Column by Index<a class="anchor-link" href="#Selecting-a-Column-by-Index">¶</a></h2><p>You can select a column based on its numeric position using <code>.iloc</code>. This can be done with <code>df.iloc[:, index]</code>.</p>
-<p>This returns the column located at the specified index position.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=80a8e17d-85a1-4978-8b58-71182d7744cc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Age</th>
-<th>Most_Used_Platform</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>19</td>
-<td>Instagram</td>
-</tr>
-<tr>
-<th>1</th>
-<td>22</td>
-<td>Twitter</td>
-</tr>
-<tr>
-<th>2</th>
-<td>20</td>
-<td>TikTok</td>
-</tr>
-<tr>
-<th>3</th>
-<td>18</td>
-<td>YouTube</td>
-</tr>
-<tr>
-<th>4</th>
-<td>21</td>
-<td>Facebook</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a814316-f5e8-4be2-8f85-de1ca2069b0d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-Rows-and-Columns-by-Index">Selecting Rows and Columns by Index<a class="anchor-link" href="#Selecting-Rows-and-Columns-by-Index">¶</a></h2><p>You can select specific rows and columns using their numeric positions with <code>.iloc</code>. This can be done with <code>df.iloc[row_index, column_index]</code>.</p>
-<p>This returns the value located at the specified row and column positions.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6d1cb300-15bb-4fd8-a092-855d1eb3faac">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Age</th>
-<th>Most_Used_Platform</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>5</th>
-<td>19</td>
-<td>Instagram</td>
-</tr>
-<tr>
-<th>6</th>
-<td>23</td>
-<td>LinkedIn</td>
-</tr>
-<tr>
-<th>7</th>
-<td>20</td>
-<td>Snapchat</td>
-</tr>
-<tr>
-<th>8</th>
-<td>18</td>
-<td>TikTok</td>
-</tr>
-<tr>
-<th>9</th>
-<td>21</td>
-<td>Instagram</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d729dc7c-651d-4407-8c64-54afa6128e81">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Filtering-Using-Conditions">Filtering Using Conditions<a class="anchor-link" href="#Filtering-Using-Conditions">¶</a></h2><p>You can filter rows in a DataFrame by applying a condition to a column. This can be done with <code>df.loc[filter_condition, "column"]</code>.</p>
-<p>This returns values from the specified column for rows that satisfy the condition.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6bb11cf2-dfa1-4e8b-83ba-0a55fdc28298">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">"Most_Used_Platform"</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[76]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0      Instagram
-3        YouTube
-5      Instagram
-8         TikTok
-10      Snapchat
-         ...    
-680    Instagram
-686      Twitter
-692       TikTok
-698    Instagram
-704     Facebook
-Name: Most_Used_Platform, Length: 177, dtype: str</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d5b4b24a-0865-425b-83b5-359633cfad72">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sorting">Sorting<a class="anchor-link" href="#Sorting">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2033908a-fbf6-4948-a5f0-9d966af9a3f1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sorting-by-Column">Sorting by Column<a class="anchor-link" href="#Sorting-by-Column">¶</a></h2><p>You can sort the rows of a DataFrame based on the values in a column using <code>.sort_values()</code>. This can be done with <code>df.sort_values(by="column")</code>.</p>
-<p>This returns the DataFrame with rows ordered according to the values in the specified column.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=37c84a4d-6d8e-48fc-9adb-a3fc747aadfd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [80]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">"Avg_Daily_Usage_Hours"</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[80]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Avg_Daily_Usage_Hours</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep_Hours_Per_Night</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>6</th>
-<td>7</td>
-<td>23</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Germany</td>
-<td>1.5</td>
-<td>LinkedIn</td>
-<td>No</td>
-<td>8.0</td>
-<td>9</td>
-<td>Single</td>
-<td>0</td>
-<td>2</td>
-</tr>
-<tr>
-<th>16</th>
-<td>17</td>
-<td>24</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Sweden</td>
-<td>2.0</td>
-<td>LinkedIn</td>
-<td>No</td>
-<td>7.8</td>
-<td>8</td>
-<td>Single</td>
-<td>0</td>
-<td>3</td>
-</tr>
-<tr>
-<th>1</th>
-<td>2</td>
-<td>22</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>India</td>
-<td>2.1</td>
-<td>Twitter</td>
-<td>No</td>
-<td>7.5</td>
-<td>8</td>
-<td>Single</td>
-<td>0</td>
-<td>3</td>
-</tr>
-<tr>
-<th>28</th>
-<td>29</td>
-<td>24</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Malaysia</td>
-<td>2.2</td>
-<td>LinkedIn</td>
-<td>No</td>
-<td>7.4</td>
-<td>8</td>
-<td>Single</td>
-<td>0</td>
-<td>3</td>
-</tr>
-<tr>
-<th>494</th>
-<td>495</td>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Switzerland</td>
-<td>2.2</td>
-<td>Instagram</td>
-<td>No</td>
-<td>9.6</td>
-<td>8</td>
-<td>Single</td>
-<td>2</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=52fe68e7-0e2f-435a-80d4-43406d0bbb50">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sorting-(Ascending-or-Descending)">Sorting (Ascending or Descending)<a class="anchor-link" href="#Sorting-(Ascending-or-Descending)">¶</a></h2><p>You can control the sort direction using the <code>ascending</code> argument in <code>.sort_values()</code>. This can be done with <code>df.sort_values(by="column", ascending=True)</code>.</p>
-<p>Set <code>ascending=True</code> for increasing order or <code>ascending=False</code> for decreasing order.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a8ab95ea-1f92-4e59-a670-9dc32844f130">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [81]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">"Avg_Daily_Usage_Hours"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[81]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Avg_Daily_Usage_Hours</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep_Hours_Per_Night</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>496</th>
-<td>497</td>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>8.5</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>3.8</td>
-<td>5</td>
-<td>In Relationship</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>486</th>
-<td>487</td>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>8.4</td>
-<td>TikTok</td>
-<td>Yes</td>
-<td>3.9</td>
-<td>5</td>
-<td>In Relationship</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>476</th>
-<td>477</td>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>8.3</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>4.0</td>
-<td>5</td>
-<td>In Relationship</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>466</th>
-<td>467</td>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>8.2</td>
-<td>TikTok</td>
-<td>Yes</td>
-<td>4.1</td>
-<td>5</td>
-<td>In Relationship</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>456</th>
-<td>457</td>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>8.1</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>4.2</td>
-<td>5</td>
-<td>In Relationship</td>
-<td>4</td>
-<td>9</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2103a676-4fa0-4795-8ed7-85594a074105">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sorting-by-Multiple-Columns">Sorting by Multiple Columns<a class="anchor-link" href="#Sorting-by-Multiple-Columns">¶</a></h2><p>You can sort a DataFrame using more than one column. This can be done with <code>df.sort_values(by=["column1", "column2"])</code>.</p>
-<p>Rows are first sorted by the first column, and ties are then sorted using the next column.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3983303a-40e8-4084-b4d2-4e3cb7de5f2b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [86]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">,</span> <span class="s2">"Gender"</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[86]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Avg_Daily_Usage_Hours</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep_Hours_Per_Night</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>13</th>
-<td>14</td>
-<td>18</td>
-<td>Female</td>
-<td>High School</td>
-<td>Mexico</td>
-<td>6.5</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>5.5</td>
-<td>5</td>
-<td>Single</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>63</th>
-<td>64</td>
-<td>18</td>
-<td>Female</td>
-<td>High School</td>
-<td>Czech Republic</td>
-<td>6.1</td>
-<td>Snapchat</td>
-<td>Yes</td>
-<td>5.2</td>
-<td>4</td>
-<td>Single</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>79</th>
-<td>80</td>
-<td>18</td>
-<td>Female</td>
-<td>High School</td>
-<td>Armenia</td>
-<td>5.9</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>5.2</td>
-<td>5</td>
-<td>Complicated</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>89</th>
-<td>90</td>
-<td>18</td>
-<td>Female</td>
-<td>High School</td>
-<td>Liechtenstein</td>
-<td>5.8</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>5.2</td>
-<td>5</td>
-<td>Single</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>103</th>
-<td>104</td>
-<td>18</td>
-<td>Female</td>
-<td>High School</td>
-<td>Syria</td>
-<td>5.6</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>5.4</td>
-<td>5</td>
-<td>Single</td>
-<td>4</td>
-<td>8</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=14e00e95-6788-49dd-84ce-87131e4af134">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Manipulating-Columns">Manipulating Columns<a class="anchor-link" href="#Manipulating-Columns">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7cc0ddb0-5361-4595-8d84-213d1aae0031">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Creating-Columns">Creating Columns<a class="anchor-link" href="#Creating-Columns">¶</a></h2><p>You can create a new column by assigning values to a new column name. This can be done with <code>df["new_column"] = new_column_values</code>.</p>
-<p>This adds the new column to the DataFrame.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ad543c92-ccd2-43ba-8b3c-e8b0d3c8d364">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [92]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"Sleep_Usage_Ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Sleep_Hours_Per_Night"</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s2">"Avg_Daily_Usage_Hours"</span><span class="p">]</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s2">"Sleep_Usage_Ratio"</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[92]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0    1.250000
-1    3.571429
-2    0.833333
-3    2.333333
-4    1.333333
-Name: Sleep_Usage_Ratio, dtype: float64</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ff8357c-e85c-4339-925c-2573f96ee299">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Renaming-Columns">Renaming Columns<a class="anchor-link" href="#Renaming-Columns">¶</a></h2><p>You can rename columns in a DataFrame using <code>.rename()</code>. This can be done with <code>df.rename(columns={"old_name": "new_name"})</code>.</p>
-<p>This changes the column name while leaving the rest of the DataFrame unchanged.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=888fe353-ee62-4d5b-a0b0-dd734bc38653">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [102]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"Avg_Daily_Usage_Hours"</span><span class="p">:</span> <span class="s2">"Usage"</span><span class="p">,</span>
-                   <span class="s2">"Sleep_Hours_Per_Night"</span><span class="p">:</span> <span class="s2">"Sleep"</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[102]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Student_ID</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Usage</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-<th>Sleep_Usage_Ratio</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>1</td>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Bangladesh</td>
-<td>5.2</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>6.5</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>3</td>
-<td>8</td>
-<td>1.250000</td>
-</tr>
-<tr>
-<th>1</th>
-<td>2</td>
-<td>22</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>India</td>
-<td>2.1</td>
-<td>Twitter</td>
-<td>No</td>
-<td>7.5</td>
-<td>8</td>
-<td>Single</td>
-<td>0</td>
-<td>3</td>
-<td>3.571429</td>
-</tr>
-<tr>
-<th>2</th>
-<td>3</td>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>6.0</td>
-<td>TikTok</td>
-<td>Yes</td>
-<td>5.0</td>
-<td>5</td>
-<td>Complicated</td>
-<td>4</td>
-<td>9</td>
-<td>0.833333</td>
-</tr>
-<tr>
-<th>3</th>
-<td>4</td>
-<td>18</td>
-<td>Male</td>
-<td>High School</td>
-<td>UK</td>
-<td>3.0</td>
-<td>YouTube</td>
-<td>No</td>
-<td>7.0</td>
-<td>7</td>
-<td>Single</td>
-<td>1</td>
-<td>4</td>
-<td>2.333333</td>
-</tr>
-<tr>
-<th>4</th>
-<td>5</td>
-<td>21</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Canada</td>
-<td>4.5</td>
-<td>Facebook</td>
-<td>Yes</td>
-<td>6.0</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>2</td>
-<td>7</td>
-<td>1.333333</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9aa67406-b2e3-43dc-b17a-cd0310f953f1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Dropping-Columns">Dropping Columns<a class="anchor-link" href="#Dropping-Columns">¶</a></h2><p>You can remove a column from a DataFrame using <code>.drop()</code>. This can be done with <code>df.drop(columns="column")</code>.</p>
-<p>This returns a DataFrame with the specified column removed.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2e771bc7-5f56-4547-8bb8-4e9223ae81d8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [103]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"Student_ID"</span><span class="p">,</span> <span class="s2">"Sleep_Usage_Ratio"</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[103]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Age</th>
-<th>Gender</th>
-<th>Academic_Level</th>
-<th>Country</th>
-<th>Usage</th>
-<th>Most_Used_Platform</th>
-<th>Affects_Academic_Performance</th>
-<th>Sleep</th>
-<th>Mental_Health_Score</th>
-<th>Relationship_Status</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>19</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>Bangladesh</td>
-<td>5.2</td>
-<td>Instagram</td>
-<td>Yes</td>
-<td>6.5</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>3</td>
-<td>8</td>
-</tr>
-<tr>
-<th>1</th>
-<td>22</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>India</td>
-<td>2.1</td>
-<td>Twitter</td>
-<td>No</td>
-<td>7.5</td>
-<td>8</td>
-<td>Single</td>
-<td>0</td>
-<td>3</td>
-</tr>
-<tr>
-<th>2</th>
-<td>20</td>
-<td>Female</td>
-<td>Undergraduate</td>
-<td>USA</td>
-<td>6.0</td>
-<td>TikTok</td>
-<td>Yes</td>
-<td>5.0</td>
-<td>5</td>
-<td>Complicated</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>3</th>
-<td>18</td>
-<td>Male</td>
-<td>High School</td>
-<td>UK</td>
-<td>3.0</td>
-<td>YouTube</td>
-<td>No</td>
-<td>7.0</td>
-<td>7</td>
-<td>Single</td>
-<td>1</td>
-<td>4</td>
-</tr>
-<tr>
-<th>4</th>
-<td>21</td>
-<td>Male</td>
-<td>Graduate</td>
-<td>Canada</td>
-<td>4.5</td>
-<td>Facebook</td>
-<td>Yes</td>
-<td>6.0</td>
-<td>6</td>
-<td>In Relationship</td>
-<td>2</td>
-<td>7</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=affadd43-79b3-49f0-b1fb-0b8d6ca5f676">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lambda-Functions">Lambda Functions<a class="anchor-link" href="#Lambda-Functions">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=422c9627-40aa-41c4-b562-82639101f992">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-is-a-Lambda-Function?">What is a Lambda Function?<a class="anchor-link" href="#What-is-a-Lambda-Function?">¶</a></h2><p>A <strong>lambda function</strong> is a small, anonymous function that can be defined in a single line.</p>
-<p>In Python, lambda functions are often used for quick operations that do not require defining a full function. They are commonly used with Pandas functions like <code>map()</code> and <code>apply()</code> to transform data.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=687a6414-fce7-4e34-a848-4b2331c33fb4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [118]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="n">numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-
-<span class="n">my_funct</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="n">my_funct</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[118]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([ 0,  1,  4,  9, 16])</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3bcf8a38-62c6-446e-84bd-f22cdaa98ed8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-is-map?">What is map?<a class="anchor-link" href="#What-is-map?">¶</a></h2><p><code>map()</code> is a Pandas method used to transform the values in a single column.</p>
-<p>It applies a function or mapping to each value in a Series. This can be done with <code>df["column"].map(function)</code> or <code>df["column"].map(dictionary)</code>.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bf7f60ea-0d57-4c0d-a06b-6a0c2bb7682f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [131]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">academic_level_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"High School"</span><span class="p">:</span> <span class="s2">"HS"</span><span class="p">,</span> <span class="s2">"Undergraduate"</span><span class="p">:</span> <span class="s2">"U"</span><span class="p">,</span> <span class="s2">"Graduate"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">}</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s2">"Academic_Level_Short"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Academic_Level"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">academic_level_dict</span><span class="p">)</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s2">"Gender_Int"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Gender"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">"Female"</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="n">df</span><span class="p">[[</span><span class="s2">"Academic_Level"</span><span class="p">,</span> <span class="s2">"Academic_Level_Short"</span><span class="p">,</span> <span class="s2">"Gender"</span><span class="p">,</span> <span class="s2">"Gender_Int"</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[131]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Academic_Level</th>
-<th>Academic_Level_Short</th>
-<th>Gender</th>
-<th>Gender_Int</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>Undergraduate</td>
-<td>U</td>
-<td>Female</td>
-<td>1</td>
-</tr>
-<tr>
-<th>1</th>
-<td>Graduate</td>
-<td>G</td>
-<td>Male</td>
-<td>0</td>
-</tr>
-<tr>
-<th>2</th>
-<td>Undergraduate</td>
-<td>U</td>
-<td>Female</td>
-<td>1</td>
-</tr>
-<tr>
-<th>3</th>
-<td>High School</td>
-<td>HS</td>
-<td>Male</td>
-<td>0</td>
-</tr>
-<tr>
-<th>4</th>
-<td>Graduate</td>
-<td>G</td>
-<td>Male</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93414718-b771-4166-af17-fe17daeaa463">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-is-apply?">What is apply?<a class="anchor-link" href="#What-is-apply?">¶</a></h2><p><code>apply()</code> is a Pandas method used to apply a function to data in a DataFrame or Series.</p>
-<p>It is often used with lambda functions to perform operations across rows or columns. This can be done with <code>df.apply(function)</code> or <code>df["column"].apply(function)</code>.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9c9e29cd-6adc-485d-aedb-2a7d31d94cc0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [137]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"Sleep_Usage_Ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">"Sleep"</span><span class="p">]</span><span class="o">/</span><span class="n">row</span><span class="p">[</span><span class="s2">"Usage"</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">df</span><span class="p">[[</span><span class="s2">"Sleep"</span><span class="p">,</span> <span class="s2">"Usage"</span><span class="p">,</span> <span class="s2">"Sleep_Usage_Ratio"</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[137]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Sleep</th>
-<th>Usage</th>
-<th>Sleep_Usage_Ratio</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>6.5</td>
-<td>5.2</td>
-<td>1.250000</td>
-</tr>
-<tr>
-<th>1</th>
-<td>7.5</td>
-<td>2.1</td>
-<td>3.571429</td>
-</tr>
-<tr>
-<th>2</th>
-<td>5.0</td>
-<td>6.0</td>
-<td>0.833333</td>
-</tr>
-<tr>
-<th>3</th>
-<td>7.0</td>
-<td>3.0</td>
-<td>2.333333</td>
-</tr>
-<tr>
-<th>4</th>
-<td>6.0</td>
-<td>4.5</td>
-<td>1.333333</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a25b81b5-b475-4dfb-8327-42bb7e654096">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Grouping-and-Summarizing">Grouping and Summarizing<a class="anchor-link" href="#Grouping-and-Summarizing">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c66234a0-4380-47c9-bda3-4d6e54746669">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Getting-Non-Null-Counts">Getting Non-Null Counts<a class="anchor-link" href="#Getting-Non-Null-Counts">¶</a></h2><p>You can count the number of non-missing values in a column using <code>count()</code>. This can be done with <code>df["column"].count()</code>.</p>
-<p>This returns the number of observations that are not null in the selected column.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=70fcd520-844f-4e44-9d66-428d07d7e3cd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [146]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Gender"</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">"Gender"</span><span class="p">,</span> <span class="s2">"Academic_Level_Short"</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>705
-Gender                  705
-Academic_Level_Short    705
-dtype: int64
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7a71eb83-f543-4073-ab74-c0ef7da2d90a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Getting-Category-Counts">Getting Category Counts<a class="anchor-link" href="#Getting-Category-Counts">¶</a></h2><p>You can count how many times each value appears in a column using <code>value_counts()</code>. This can be done with <code>df["column"].value_counts()</code>.</p>
-<p>This is commonly used to summarize <strong>categorical variables</strong>.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=09e5a2e0-00bf-400a-8b11-da2c6d32275e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Academic_Level"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
-
-<span class="n">df</span><span class="p">[[</span><span class="s2">"Gender"</span><span class="p">,</span> <span class="s2">"Relationship_Status"</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Academic_Level
-Undergraduate    353
-Graduate         325
-High School       27
-Name: count, dtype: int64
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[153]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>Gender  Relationship_Status
-Female  Single                 198
-Male    Single                 186
-        In Relationship        151
-Female  In Relationship        138
-        Complicated             17
-Name: count, dtype: int64</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c00c8ec-74eb-4e0a-9f8d-f885f7422bdb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Getting-Bivariate-Categorical-Counts">Getting Bivariate Categorical Counts<a class="anchor-link" href="#Getting-Bivariate-Categorical-Counts">¶</a></h2><p>You can view counts for combinations of two categorical variables using <code>pd.crosstab()</code>. This can be done with <code>pd.crosstab(df["column1"], df["column2"])</code>.</p>
-<p>This produces a table showing how frequently each pair of categories occurs.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=888df9e4-39eb-44f5-81ad-e5b159d0cca6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Gender"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Relationship_Status"</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[152]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th>Relationship_Status</th>
-<th>Complicated</th>
-<th>In Relationship</th>
-<th>Single</th>
-</tr>
-<tr>
-<th>Gender</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>Female</th>
-<td>17</td>
-<td>138</td>
-<td>198</td>
-</tr>
-<tr>
-<th>Male</th>
-<td>15</td>
-<td>151</td>
-<td>186</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=533a6b7d-4a3c-4533-8202-6201d0291a96">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Seeing-Correlations">Seeing Correlations<a class="anchor-link" href="#Seeing-Correlations">¶</a></h2><p>You can compute correlations between numeric variables using <code>df.corr()</code>.</p>
-<p>This returns a correlation matrix showing the strength and direction of relationships between quantitative columns.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=617ad5e4-d7e0-48da-b541-5e28e65217b8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [161]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">numeric_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Usage"</span><span class="p">,</span> <span class="s2">"Sleep"</span><span class="p">,</span> <span class="s2">"Conflicts_Over_Social_Media"</span><span class="p">,</span> <span class="s2">"Addicted_Score"</span><span class="p">]</span>
-
-<span class="n">df</span><span class="p">[</span><span class="n">numeric_columns</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[161]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Usage</th>
-<th>Sleep</th>
-<th>Conflicts_Over_Social_Media</th>
-<th>Addicted_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>Usage</th>
-<td>1.000000</td>
-<td>-0.790582</td>
-<td>0.804582</td>
-<td>0.832000</td>
-</tr>
-<tr>
-<th>Sleep</th>
-<td>-0.790582</td>
-<td>1.000000</td>
-<td>-0.677266</td>
-<td>-0.764858</td>
-</tr>
-<tr>
-<th>Conflicts_Over_Social_Media</th>
-<td>0.804582</td>
-<td>-0.677266</td>
-<td>1.000000</td>
-<td>0.933586</td>
-</tr>
-<tr>
-<th>Addicted_Score</th>
-<td>0.832000</td>
-<td>-0.764858</td>
-<td>0.933586</td>
-<td>1.000000</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b1e40460-1cc1-405c-909d-e5991b5da820">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Grouping-and-Summary-Functions">Grouping and Summary Functions<a class="anchor-link" href="#Grouping-and-Summary-Functions">¶</a></h2><p>You can group data by a variable and compute summary statistics using <code>groupby()</code>. This can be done with <code>df.groupby("group_column")["target_column"].function()</code>.</p>
-<p>This allows you to calculate statistics such as the mean, sum, or count for each group.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=315a1f77-2df4-4b69-a43e-e42261736529">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [163]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Gender"</span><span class="p">)[</span><span class="s2">"Age"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[163]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>Gender
-Female    19.968839
-Male      21.352273
-Name: Age, dtype: float64</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c66e0e03-c28a-419f-a92a-75fe520f38ac">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Group-By-and-Aggregate">Group By and Aggregate<a class="anchor-link" href="#Group-By-and-Aggregate">¶</a></h2><p>You can compute multiple summary statistics for multiple columns using <code>.groupby()</code> with <code>.agg()</code>. This can be done with <code>df.groupby("group_column")[["target_column1", "target_column2"]].agg(["function1", "function2"])</code>.</p>
-<p>This returns grouped summaries for the selected columns using the specified functions.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=00390bdd-5fec-4b5e-9ba0-d6983fdb200d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [165]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Academic_Level"</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">"Usage"</span><span class="p">:</span> <span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"Sleep"</span><span class="p">:</span> <span class="s2">"median"</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[165]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Usage</th>
-<th>Sleep</th>
-</tr>
-<tr>
-<th>Academic_Level</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>Graduate</th>
-<td>4.776923</td>
-<td>7.1</td>
-</tr>
-<tr>
-<th>High School</th>
-<td>5.544444</td>
-<td>5.4</td>
-</tr>
-<tr>
-<th>Undergraduate</th>
-<td>5.001416</td>
-<td>6.8</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93675612-18ef-4d8f-aab3-30b10cfafff4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Merging-DataFrames">Merging DataFrames<a class="anchor-link" href="#Merging-DataFrames">¶</a></h2><p>You can combine two DataFrames based on matching keys using <code>merge()</code>. This can be done with <code>df.merge(right_df, left_on="left_key", right_on="right_key")</code> or <code>pd.merge(left_df, right_df, left_on="left_key", right_on="right_key")</code>.</p>
-<p>This joins the rows from both DataFrames where the specified keys match.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7f90b878-9ba5-41b5-a7e8-0e3c155b93ce">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [186]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT * FROM movies</span>
-<span class="s2">"""</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-
-<span class="n">df_directors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT * FROM directors</span>
-<span class="s2">"""</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-
-<span class="n">df_md</span> <span class="o">=</span> <span class="n">df_directors</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_movies</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">"id"</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">"director_id"</span><span class="p">)</span>
-
-<span class="n">df_md</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[186]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>name</th>
-<th>title</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>James Cameron</td>
-<td>Avatar</td>
-</tr>
-<tr>
-<th>1</th>
-<td>James Cameron</td>
-<td>Titanic</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=96d0ec5e-a72d-41d6-ad4f-e16c1eff25f0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Converting-Variable-to-DateTime">Converting Variable to DateTime<a class="anchor-link" href="#Converting-Variable-to-DateTime">¶</a></h2><p>You can convert a column to a datetime type using <code>pd.to_datetime()</code>. This can be done with <code>pd.to_datetime(df["date_column"])</code>.</p>
-<p>This allows you to work with dates and times more easily in Pandas.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d9a5fc12-718f-4c94-a65d-0193f5d8c8eb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [187]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_movies</span><span class="p">[</span><span class="s2">"release_date"</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
-
-<span class="n">df_movies</span><span class="p">[</span><span class="s2">"release_date"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_movies</span><span class="p">[</span><span class="s2">"release_date"</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_movies</span><span class="p">[</span><span class="s2">"release_date"</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'str'&gt;
-&lt;class 'pandas.Timestamp'&gt;
+<pre>Hello, data science!
+6
 </pre>
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>lecture_slides slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>lecture slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7435,1031 +7435,514 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=199774bc-de45-4730-a4c4-ada1bf9967ec">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=28b6b26a-006a-4859-91c8-74385b9a0771">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Databases-and-SQL">Databases and SQL<a class="anchor-link" href="#Databases-and-SQL">¶</a></h1>
+<h2 id="The-Data-Science-Workflow">The Data Science Workflow<a class="anchor-link" href="#The-Data-Science-Workflow">¶</a></h2>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f074f910-b24a-47b2-a58a-7948658bd030">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf7cecec-093a-4f1f-bf7d-3c330fa298bf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Databases">Databases<a class="anchor-link" href="#Databases">¶</a></h2><p>A <strong>database</strong> is an organized collection of data stored electronically so it can be easily accessed, managed, and updated.</p>
-<p>In many databases, data is stored in tables made up of rows and columns. Each row represents a single record, and each column represents an attribute of that record.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b0712521-04d2-466c-b688-7c7269920de5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [93]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Importing sqlite3 library and pprint (pretty print) function</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
-
-<span class="c1"># Creating a connectiong to the database</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"movies.sqlite"</span><span class="p">)</span>
-
-<span class="c1"># The cursor will allow us to query the database</span>
-<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a18f14ca-b118-43a7-a069-c5e9fc73616e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Selecting-Columns-and-Rows">Selecting Columns and Rows<a class="anchor-link" href="#Selecting-Columns-and-Rows">¶</a></h1>
+<h2 id="Learning-Objectives">Learning Objectives<a class="anchor-link" href="#Learning-Objectives">¶</a></h2><ol>
+<li>Identify and describe the different components of the data science workflow</li>
+<li>Distinguish between supervised and unsupervised learning problems</li>
+<li>Distinguish between regression and classification problems</li>
+<li>Identify and distinguish between different roles in data science</li>
+</ol>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9ae40a6-10b1-4805-8476-7ac70a8595dc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c9ed553e-e71a-4a4d-8136-0231f5d05060">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="SELECT,-FROM,-and-LIMIT">SELECT, FROM, and LIMIT<a class="anchor-link" href="#SELECT,-FROM,-and-LIMIT">¶</a></h2><p>The <strong>SELECT</strong> statement specifies which columns should be returned in the query results.</p>
-<p>The <strong>FROM</strong> clause specifies the table that the data should be retrieved from.</p>
-<p>The <strong>LIMIT</strong> clause restricts the number of rows returned by the query.</p>
+<h2 id="What-is-Data-Science?">What is Data Science?<a class="anchor-link" href="#What-is-Data-Science?">¶</a></h2><p><strong>Data science</strong> is the field of extracting knowledge and insights from data using statistics, computing, and domain expertise.</p>
+<p><strong>Examples of core activities:</strong></p>
+<ul>
+<li>Collect and manage data</li>
+<li>Clean and prepare data</li>
+<li>Explore and visualize data</li>
+<li>Build statistical or machine learning models</li>
+<li>Communicate insights to support decisions</li>
+</ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17df6260-1eee-43ad-bd26-c53f7c2f7831">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4192bec1-476b-4c5b-99e2-b7db68dea729">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="SELECT,-FROM,-and-LIMIT">SELECT, FROM, and LIMIT<a class="anchor-link" href="#SELECT,-FROM,-and-LIMIT">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=69d1abc4-edec-4a15-b1d1-2e4e0df751f5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [211]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Selecting all columns from the movies database</span>
-<span class="c1"># Limits to the first 10 records (rows)</span>
-
-<span class="c1"># Executes query and stores result</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT * FROM movies</span>
-<span class="s2">    LIMIT 1</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="c1"># Gets records</span>
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[211]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[(43597,
-  'Avatar',
-  237000000,
-  150,
-  '2009-12-10',
-  2787965087,
-  'Avatar',
-  7.2,
-  11800,
-  'In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.',
-  'Enter the World of Pandora.',
-  19995,
-  4762)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3473ddfe-3b7e-42b4-bdeb-37c7dcb6b3b5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Keys">Keys<a class="anchor-link" href="#Keys">¶</a></h2><p>A <strong>primary key</strong> is a column (or set of columns) that uniquely identifies each row in a table. No two rows can have the same primary key value, and the value cannot be NULL.</p>
-<p>A <strong>foreign key</strong> is a column in one table that references the primary key in another table. Foreign keys create relationships between tables and help maintain consistent and connected data.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=65d908b3-21e6-46cd-a90c-12764081e7ff">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [207]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT * FROM movies</span>
-<span class="s2">    LIMIT 0</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="c1"># List comprehension for seeing movie columns</span>
-<span class="nb">print</span><span class="p">([</span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">movies</span><span class="o">.</span><span class="n">description</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['id', 'original_title', 'budget', 'popularity', 'release_date', 'revenue', 'title', 'vote_average', 'vote_count', 'overview', 'tagline', 'uid', 'director_id']
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d0e88a4-5970-4f8f-ae4c-357970a57315">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Selecting-Specific-Columns">Selecting Specific Columns<a class="anchor-link" href="#Selecting-Specific-Columns">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1ca00ede-9fee-4e7c-87e7-ba2a8a66689a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [212]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT id, title, vote_average FROM movies</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[212]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[(43597, 'Avatar', 7.2),
- (43598, "Pirates of the Caribbean: At World's End", 6.9),
- (43599, 'Spectre', 6.3),
- (43600, 'The Dark Knight Rises', 7.6),
- (43601, 'John Carter', 6.1)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=623e362d-f3f5-4ad8-9787-b688d86522fe">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DISTINCT">DISTINCT<a class="anchor-link" href="#DISTINCT">¶</a></h2><p>The <strong>DISTINCT</strong> keyword is used in a query to return only unique values from a column or set of columns.</p>
-<p>When DISTINCT is used, duplicate rows in the result are removed so that each value appears only once.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0030ac36-7acc-41ae-adac-51550be36547">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [109]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT DISTINCT director_id FROM movies</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[109]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[(4762,), (4763,), (4764,), (4765,), (4766,)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=146f4bc5-d4d0-47d9-b6b0-656dcf2fe70c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Aggregate-Functions">Aggregate Functions<a class="anchor-link" href="#Aggregate-Functions">¶</a></h1>
+<h2 id="Why-Data-Science?">Why Data Science?<a class="anchor-link" href="#Why-Data-Science?">¶</a></h2><p>Organizations use <strong>data science</strong> to turn data into better decisions.</p>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li>Make <strong>data-driven decisions</strong></li>
+<li><strong>Discover patterns</strong> in large datasets</li>
+<li><strong>Predict future outcomes</strong></li>
+<li><strong>Improve efficiency</strong> and reduce costs</li>
+<li>Gain <strong>competitive advantage</strong></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Product recommendations</li>
+<li>Fraud detection</li>
+<li>Sales forecasting</li>
+<li>Operations optimization</li>
+</ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dc66157f-7d75-4b3b-849d-58c0125dd0ab">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b9c5d53e-d7c0-40f1-9b04-c430a4ceade6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Aggregate-Functions">Aggregate Functions<a class="anchor-link" href="#Aggregate-Functions">¶</a></h2><p>An <strong>aggregate function</strong> performs a calculation on multiple rows and returns a single summarized value.</p>
-<p>Common aggregate functions include COUNT, SUM, AVG, MIN, and MAX, which are used to summarize data in a table.</p>
+<h2 id="The-Data-Science-Workflow">The Data Science Workflow<a class="anchor-link" href="#The-Data-Science-Workflow">¶</a></h2><p>There is <strong>no single authoritative definition</strong> of the data science workflow.<br/>
+Different organizations use different processes, but most workflows include similar stages.</p>
+<p><strong>Common steps:</strong></p>
+<ol>
+<li>Define the <strong>problem or question</strong></li>
+<li><strong>Collect and acquire data</strong></li>
+<li><strong>Clean and prepare</strong> the data</li>
+<li><strong>Explore and analyze</strong> the data</li>
+<li><strong>Build models</strong> or apply statistical methods</li>
+<li><strong>Evaluate results</strong></li>
+<li><strong>Communicate results</strong> and deploy models</li>
+</ol>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0f67f093-588d-44f5-be93-68a2d465bc92">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=563d8210-30f8-44ad-b6b5-cc15b5fa4fa2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="COUNT">COUNT<a class="anchor-link" href="#COUNT">¶</a></h2><p>The <strong>COUNT</strong> function returns the number of rows that match a query.</p>
-<p>It is commonly used to determine how many records exist in a table or how many rows satisfy a particular condition.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3df586c7-e06f-430b-a4ea-3eb06a2d675e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [209]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Gets all movies</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT COUNT(*), COUNT(DISTINCT director_id) FROM movies</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[(4773, 2349)]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4179af33-68ae-409b-be52-2744180a145c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="AVG-and-SUM">AVG and SUM<a class="anchor-link" href="#AVG-and-SUM">¶</a></h2><p>The <strong>AVG</strong> function calculates the average (mean) value of a numeric column across the rows returned by a query.</p>
-<p>The <strong>SUM</strong> function adds together the values in a numeric column to return the total.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2c7a5c6a-a161-4039-ba83-6441a7202fcd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [107]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT AVG(vote_average) FROM movies</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT SUM(budget) FROM movies</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[(6.109176618478943,)]
-[(139489076520,)]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7bae2f58-7ee7-4e55-a683-a60c4c2aa294">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="MIN-and-MAX">MIN and MAX<a class="anchor-link" href="#MIN-and-MAX">¶</a></h2><p>The <strong>MIN</strong> function returns the smallest value in a column.</p>
-<p>The <strong>MAX</strong> function returns the largest value in a column.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0e8bd08a-87e8-486c-8979-2f56a7b7abbb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [105]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT MAX(vote_count), title FROM movies</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT MIN(vote_average), title FROM movies</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[(13752, 'Inception')]
-[(0.0, 'Black Water Transit')]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=40c4383c-a27d-4934-978a-90d2e209350d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Aliases">Aliases<a class="anchor-link" href="#Aliases">¶</a></h2><p>An <strong>alias</strong> is a temporary name given to a column or table in a query. Aliases make query results easier to read and allow you to reference columns or tables with shorter or clearer names.</p>
-<p>Aliases are created using the AS keyword and only apply to the result of the query.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=02fb44cb-4407-44ac-b8bd-be1c1d5fa582">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [104]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT COUNT(*) AS total_movies, </span>
-<span class="s2">    AVG(budget) AS average_budget</span>
-<span class="s2">    FROM movies</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">([</span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">description</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['total_movies', 'average_budget']
-[(4773, 29224612.72155877)]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=414d1c13-52a8-4b9b-a71c-c79753e45514">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Filtering-Results">Filtering Results<a class="anchor-link" href="#Filtering-Results">¶</a></h1>
+<h2 id="Problem-Definition">Problem Definition<a class="anchor-link" href="#Problem-Definition">¶</a></h2><p>The <strong>first step</strong> in the data science workflow is clearly defining the problem.</p>
+<p><strong>Key questions:</strong></p>
+<ul>
+<li>What decision needs to be made?</li>
+<li>What question are we trying to answer?</li>
+<li>Who are the stakeholders?</li>
+<li>What does <strong>success</strong> look like?</li>
+</ul>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li>Aligns the project with <strong>business goals</strong></li>
+<li>Determines what <strong>data</strong> is needed</li>
+<li>Guides the <strong>analysis and modeling approach</strong></li>
+</ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dcb32fe8-77dc-4ead-b3cf-df1c172eea49">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff173000-145a-4a28-bc1f-d0a598160fae">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="WHERE">WHERE<a class="anchor-link" href="#WHERE">¶</a></h2><p>The <strong>WHERE</strong> clause is used to filter rows in a query based on specified conditions.</p>
-<p>Only rows that satisfy the condition in the WHERE clause are included in the query results.</p>
-<p>Common operators include comparison operators (such as =, !=, &lt;, &gt;, &lt;=, &gt;=) and logical operators (such as AND, OR, and NOT) that combine or modify conditions.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2ca2913d-8bb2-498c-a869-9fe0b49673f1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [103]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT title, revenue FROM movies </span>
-<span class="s2">    WHERE revenue &gt; 1000000000</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[103]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[('Avatar', 2787965087),
- ('The Dark Knight Rises', 1084939099),
- ('Avengers: Age of Ultron', 1405403694),
- ("Pirates of the Caribbean: Dead Man's Chest", 1065659812),
- ('The Avengers', 1519557910)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e0d2d822-0b60-47a7-b0a0-d348ac762641">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="LIKE">LIKE<a class="anchor-link" href="#LIKE">¶</a></h2><p>The <strong>LIKE</strong> operator is used in a WHERE clause to search for patterns in text values.</p>
-<p>It often uses wildcard characters such as <code>%</code>, which represents any sequence of characters, and <code>_</code>, which represents a single character.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f618228f-f363-46fd-b880-f2c36916b287">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [102]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT title, tagline FROM movies</span>
-<span class="s2">    WHERE tagline LIKE "</span><span class="si">%a</span><span class="s2">dventure%"</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[102]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[("Pirates of the Caribbean: At World's End",
-  'At the end of the world, the adventure begins.'),
- ('Tangled', "They're taking adventure to new lengths."),
- ('Jack the Giant Slayer', 'Prepare for a giant adventure'),
- ('Indiana Jones and the Kingdom of the Crystal Skull',
-  'The adventure continues . . .'),
- ('WALL·E', 'An adventure beyond the ordinar-E.')]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ec3c50ac-6fc9-45dc-89c1-0e0932331d90">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="IN">IN<a class="anchor-link" href="#IN">¶</a></h2><p>The <strong>IN</strong> operator is used in a WHERE clause to check whether a value matches any value in a specified list.</p>
-<p>It allows you to test a column against multiple possible values without writing multiple conditions.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5d7f28d7-6b23-492b-8540-6cb9069e3b78">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [101]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT title, director_id FROM movies</span>
-<span class="s2">    WHERE director_id IN (4762, 4763)</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[101]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[('Avatar', 4762),
- ("Pirates of the Caribbean: At World's End", 4763),
- ("Pirates of the Caribbean: Dead Man's Chest", 4763),
- ('The Lone Ranger', 4763),
- ('Titanic', 4762)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17b1e790-1c3b-41fe-82ea-a50f65fcca96">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="AND-and-OR">AND and OR<a class="anchor-link" href="#AND-and-OR">¶</a></h2><p>The <strong>AND</strong> operator combines multiple conditions and returns rows only when all conditions are true.</p>
-<p>The <strong>OR</strong> operator combines multiple conditions and returns rows when at least one condition is true.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ce7a1cba-dc78-4393-84b6-91bfc9cd1a04">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [134]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT title, revenue, popularity FROM movies</span>
-<span class="s2">    WHERE (revenue &gt; 500000000 AND popularity &lt; 10)</span>
-<span class="s2">    OR (revenue &lt; 100000000 AND popularity &gt; 100)</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[134]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[('Fast Five', 626137675, 7),
- ('The Shawshank Redemption', 28341469, 136),
- ('The Godfather: Part II', 47542841, 105),
- ('Whiplash', 13092000, 192)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f0d0ebdc-82d4-48ec-ba5a-4f5f88cbe713">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="NULL">NULL<a class="anchor-link" href="#NULL">¶</a></h2><p>A <strong>NULL</strong> value represents missing or unknown data in a table.</p>
-<p>Because NULL is not equal to any value, it must be checked using the IS NULL or IS NOT NULL conditions in a WHERE clause.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2a05a797-af7c-4119-af61-d42979334f40">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [140]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT title FROM movies</span>
-<span class="s2">    WHERE tagline IS NULL</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[140]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[('Superman Returns',),
- ('Star Trek Beyond',),
- ('Up',),
- ('The Jungle Book',),
- ('Angels &amp; Demons',)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=224bfb4b-c3c8-4032-9c62-b2d8aef6ad03">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Grouping,-Summarizing,-and-Sorting">Grouping, Summarizing, and Sorting<a class="anchor-link" href="#Grouping,-Summarizing,-and-Sorting">¶</a></h1>
+<h2 id="Supervised-Learning">Supervised Learning<a class="anchor-link" href="#Supervised-Learning">¶</a></h2><p><strong>Supervised learning</strong> uses data with <strong>known outcomes (labels)</strong> to train models.</p>
+<p><strong>Goal:</strong></p>
+<ul>
+<li>Learn a relationship between <strong>inputs (features)</strong> and <strong>outputs (labels)</strong></li>
+<li>Use that relationship to <strong>predict outcomes for new data</strong></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Regression:</strong> Predicting a student's <strong>final exam score</strong> based on study hours and attendance</li>
+<li><strong>Classification:</strong> Classifying <strong>emails as spam or not spam</strong></li>
+</ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e514f50-6607-4069-956e-f20638267d22">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8ed97d88-558d-4b87-8345-75116f28434d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="GROUP-BY">GROUP BY<a class="anchor-link" href="#GROUP-BY">¶</a></h2><p>The <strong>GROUP BY</strong> clause is used to group rows that have the same values in specified columns.</p>
-<p>It is commonly used with aggregate functions to calculate summaries for each group.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1c79e67d-fd1f-4853-8bf4-3e3a38c829ce">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [150]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT director_id, SUM(revenue) AS total_revenue</span>
-<span class="s2">    FROM movies</span>
-<span class="s2">    GROUP BY director_id</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[150]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[(4762, 5883569439),
- (4763, 3177013357),
- (4764, 2713548809),
- (4765, 4227483234),
- (4766, 2109045355)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c9c83eeb-ae43-4256-9f74-a79f90b194ee">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="HAVING">HAVING<a class="anchor-link" href="#HAVING">¶</a></h2><p>The <strong>HAVING</strong> clause is used to filter groups created by a GROUP BY clause.</p>
-<p>It is typically used with aggregate functions to restrict which grouped results are included in the final output.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5459548a-6bc7-4e61-a1fc-dd8b1051e823">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [184]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT director_id, SUM(revenue) AS total_revenue</span>
-<span class="s2">    FROM movies</span>
-<span class="s2">    GROUP BY director_id</span>
-<span class="s2">    HAVING total_revenue &gt; 5000000000</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[184]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[(4762, 5883569439),
- (4777, 6498642820),
- (4788, 5832524638),
- (4799, 9147393164)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f316df32-814e-42f1-9b1a-2ca708477b26">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="ORDER-BY">ORDER BY<a class="anchor-link" href="#ORDER-BY">¶</a></h2><p>The <strong>ORDER BY</strong> clause is used to sort the results of a query based on one or more columns.</p>
-<p>Results can be sorted in ascending order (ASC) or descending order (DESC).</p>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=45fc2c26-06ac-433a-9a5f-ac0b11f1ea77">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT director_id, SUM(revenue) AS total_revenue</span>
-<span class="s2">    FROM movies</span>
-<span class="s2">    GROUP BY director_id</span>
-<span class="s2">    ORDER BY total_revenue DESC</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[151]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[(4799, 9147393164),
- (4777, 6498642820),
- (4762, 5883569439),
- (4788, 5832524638),
- (4765, 4227483234)]</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72fa0812-caa0-4393-b92f-5fc84ad3e774">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Joining-Tables">Joining Tables<a class="anchor-link" href="#Joining-Tables">¶</a></h1>
+<h2 id="Regression-vs-Classification">Regression vs Classification<a class="anchor-link" href="#Regression-vs-Classification">¶</a></h2><p><strong>Regression</strong></p>
+<ul>
+<li>Used when the output is a <strong>continuous value</strong></li>
+<li>The model predicts a <strong>number</strong></li>
+</ul>
+<p><strong>Classification</strong></p>
+<ul>
+<li>Used when the output is a <strong>category or label</strong></li>
+<li>The model predicts a <strong>class</strong></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Regression:</strong> Predicting a house <strong>price</strong> based on size and location</li>
+<li><strong>Classification:</strong> Classifying a tumor as <strong>benign or malignant</strong></li>
+</ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=409a58c6-3f87-4df2-b2ad-588076292429">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f9a34a0-1bec-4c81-b0fa-20ffaa7ba173">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="LEFT-JOIN">LEFT JOIN<a class="anchor-link" href="#LEFT-JOIN">¶</a></h2><p>A <strong>LEFT JOIN</strong> combines rows from two tables by matching values in related columns.</p>
-<p>All rows from the left table are returned, and matching rows from the right table are included when they exist. If there is no match, the result contains NULL values for the columns from the right table.</p>
+<h2 id="Unsupervised-Learning">Unsupervised Learning<a class="anchor-link" href="#Unsupervised-Learning">¶</a></h2><p><strong>Unsupervised learning</strong> works with data that <strong>does not have labels</strong>.</p>
+<p><strong>Goal:</strong></p>
+<ul>
+<li>Discover <strong>patterns, structure, or groupings</strong> in the data</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Customer segmentation</strong> based on purchasing behavior</li>
+<li><strong>Grouping news articles</strong> by similar topics</li>
+</ul>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=963bec0b-8a2f-4816-a8d0-c434259779e8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [180]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT directors.id, directors.name, movies.title, movies.revenue FROM directors</span>
-<span class="s2">    LEFT JOIN movies</span>
-<span class="s2">    ON directors.id = movies.director_id</span>
-<span class="s2">    LIMIT 5</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[(4762, 'James Cameron', 'Avatar', 2787965087, 4773)]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=acb1afba-d2f7-4182-ad2f-27dc814c1f23">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=817dbc3b-d5fa-41aa-bf88-3280703c113c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="INNER-JOIN">INNER JOIN<a class="anchor-link" href="#INNER-JOIN">¶</a></h2><p>An <strong>INNER JOIN</strong> combines rows from two tables by matching values in related columns.</p>
-<p>Only rows with matching values in both tables are included in the result.</p>
+<h2 id="Collect-and-Acquire-Data">Collect and Acquire Data<a class="anchor-link" href="#Collect-and-Acquire-Data">¶</a></h2><p>Once the problem is defined, the next step is gathering the data needed for analysis.</p>
+<p><strong>Common data sources:</strong></p>
+<ul>
+<li>Databases and data warehouses</li>
+<li>APIs and web services</li>
+<li>Surveys and experiments</li>
+<li>Sensors, logs, or transaction records</li>
+<li>Public or open datasets</li>
+</ul>
+<p><strong>Key considerations:</strong></p>
+<ul>
+<li>Is the data <strong>relevant</strong> to the problem?</li>
+<li>Is the data <strong>complete and reliable</strong>?</li>
+<li>Do we have permission to <strong>access and use</strong> the data?</li>
+</ul>
 </div>
 </div>
 </div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=535d8e26-2913-4d6f-862f-4cf6b90a53d0">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7e6c3c6a-ad19-49e0-a9c2-5d5186ee53ac">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="OUTER-JOIN">OUTER JOIN<a class="anchor-link" href="#OUTER-JOIN">¶</a></h2><p>An <strong>OUTER JOIN</strong> returns rows that have matching values in both tables as well as rows that do not have matches.</p>
-<p>When no match exists, the result includes NULL values for the columns from the table without a matching row.</p>
+<h2 id="Clean-and-Prepare-Data">Clean and Prepare Data<a class="anchor-link" href="#Clean-and-Prepare-Data">¶</a></h2><p>Raw data is often <strong>messy or incomplete</strong>, so it must be cleaned and prepared before analysis.</p>
+<p><strong>Common tasks:</strong></p>
+<ul>
+<li>Handle <strong>missing values</strong></li>
+<li>Fix <strong>errors or inconsistencies</strong></li>
+<li>Remove <strong>duplicates</strong></li>
+<li>Convert data into usable <strong>formats</strong></li>
+<li>Create new <strong>features or variables</strong></li>
+</ul>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li>Improves <strong>data quality</strong></li>
+<li>Makes data <strong>ready for analysis and modeling</strong></li>
+</ul>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7dc6c4ce-1fe2-4b09-815c-c9d34186c6b9">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c195533-e3b7-45c5-81fe-bc788cc806cb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Full-Query-Example">Full Query Example<a class="anchor-link" href="#Full-Query-Example">¶</a></h2>
+<h2 id="Explore-and-Analyze-Data">Explore and Analyze Data<a class="anchor-link" href="#Explore-and-Analyze-Data">¶</a></h2><p>Before building models, data scientists explore the data to understand its structure and patterns.</p>
+<p><strong>Common activities:</strong></p>
+<ul>
+<li>Calculate summary statistics</li>
+<li>Visualize data with charts and plots</li>
+<li>Identify patterns, trends, or anomalies</li>
+<li>Examine relationships between variables</li>
+</ul>
+<p><strong>Goals:</strong></p>
+<ul>
+<li>Develop intuition about the dataset</li>
+<li>Identify potential issues or outliers</li>
+<li>Inform the choice of modeling approaches</li>
+</ul>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1bcfcb16-8c46-4e5e-b829-18ac14de3693">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba197a94-e1ad-46b2-a563-517ec1623a55">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [204]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    SELECT directors.id, </span>
-<span class="s2">        directors.name, </span>
-<span class="s2">        SUM(movies.revenue) AS total_revenue</span>
-<span class="s2">    FROM directors</span>
-<span class="s2">    LEFT JOIN movies</span>
-<span class="s2">    ON directors.id = movies.director_id</span>
-<span class="s2">    WHERE movies.vote_average &gt; 7</span>
-<span class="s2">        AND movies.vote_count &gt; 4000</span>
-<span class="s2">        AND movies.tagline LIKE "</span><span class="si">%a</span><span class="s2">dventure%"</span>
-<span class="s2">    GROUP BY directors.id</span>
-<span class="s2">    HAVING total_revenue &gt; 500000000</span>
-<span class="s2">    ORDER BY total_revenue DESC</span>
-<span class="s2">"""</span><span class="p">)</span>
-
-<span class="n">res</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Build-Models">Build Models<a class="anchor-link" href="#Build-Models">¶</a></h2><p>In this stage, data scientists apply statistical or machine learning methods to learn patterns from the data.</p>
+<p><strong>Common activities:</strong></p>
+<ul>
+<li>Select an appropriate modeling approach</li>
+<li>Train models using historical data</li>
+<li>Tune model parameters</li>
+<li>Compare multiple models</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Regression for predicting numeric values</li>
+<li>Classification for predicting categories</li>
+<li>Clustering to find natural groupings in data</li>
+</ul>
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3c9367b2-d26b-4cc8-ac11-d134e033bd6a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Evaluate-Models-and-Results">Evaluate Models and Results<a class="anchor-link" href="#Evaluate-Models-and-Results">¶</a></h2><p>After building models, the next step is to determine how well they perform.</p>
+<p><strong>Common activities:</strong></p>
+<ul>
+<li>Test models on <strong>unseen data</strong></li>
+<li>Calculate <strong>performance metrics</strong></li>
+<li>Compare results across multiple models</li>
+<li>Check for <strong>overfitting or bias</strong></li>
+</ul>
+<p><strong>Examples of metrics:</strong></p>
+<ul>
+<li>Accuracy</li>
+<li>Mean squared error</li>
+</ul>
+<p><strong>Goal:</strong></p>
+<ul>
+<li>Ensure the model provides <strong>reliable and useful results</strong>.</li>
+</ul>
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[204]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[(4799, 'Steven Spielberg', 920100000),
- (5022, 'Roger Allers', 788241776),
- (5373, 'Irvin Kershner', 538400000),
- (4766, 'Andrew Stanton', 521311860)]</pre>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8fac9580-dc1c-4447-8bdb-5e56f9d587ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Communicate-Results-and-Deploy-Models">Communicate Results and Deploy Models<a class="anchor-link" href="#Communicate-Results-and-Deploy-Models">¶</a></h2><p>The final step is turning analysis into <strong>actionable outcomes</strong>.</p>
+<p><strong>Communicating results:</strong></p>
+<ul>
+<li>Present findings with <strong>visualizations and reports</strong></li>
+<li>Explain insights to <strong>stakeholders</strong></li>
+<li>Provide <strong>recommendations</strong> for decisions</li>
+</ul>
+<p><strong>Model deployment:</strong></p>
+<ul>
+<li>Integrate models into <strong>applications or systems</strong></li>
+<li>Automate predictions or decision support</li>
+<li>Monitor model <strong>performance over time</strong></li>
+</ul>
+<p><strong>Goal:</strong></p>
+<ul>
+<li>Ensure insights and models create <strong>real-world impact</strong>.</li>
+</ul>
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ae85d9c-c69f-4d2d-a0da-f2f6afbdc7b1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div></div></section></section>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Roles-in-Data-Science">Roles in Data Science<a class="anchor-link" href="#Roles-in-Data-Science">¶</a></h2><p>Data science projects often involve <strong>multiple roles working together</strong>.</p>
+<p><strong>Common roles:</strong></p>
+<ul>
+<li><strong>Stakeholders</strong> – define the problem, set goals, and use results to make decisions</li>
+<li><strong>Domain Experts (SMEs)</strong> – provide subject-matter knowledge and help interpret results in context</li>
+<li><strong>Data Engineers</strong> – collect, store, and manage data</li>
+<li><strong>Data Scientists / Statisticians</strong> – analyze data and build models</li>
+<li><strong>Data Analysts</strong> – explore data and communicate insights</li>
+<li><strong>Machine Learning Engineers</strong> – deploy and maintain models in production</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong></p>
+<ul>
+<li><strong>Stakeholder</strong> = “What problem should we solve?”</li>
+<li><strong>Domain Expert</strong> = “Do these results make sense in the real world?”</li>
+</ul>
+</blockquote>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=30294b22-bcc0-44e1-9b43-8f1ecf253634">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Stakeholders">Stakeholders<a class="anchor-link" href="#Stakeholders">¶</a></h2><p><strong>Stakeholders</strong> define the problem, set goals, and ensure the work aligns with organizational needs.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Define the <strong>business problem or question</strong></li>
+<li>Set <strong>goals and success criteria</strong></li>
+<li>Prioritize what problems are most important to solve</li>
+<li>Use insights and model outputs to <strong>inform decisions</strong></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Marketing managers</li>
+<li>Product managers</li>
+<li>Business executives</li>
+<li>Operations managers</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7cc29ec6-822c-4ac4-af49-18f80b6e3e9e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Domain-Experts-(SMEs)">Domain Experts (SMEs)<a class="anchor-link" href="#Domain-Experts-(SMEs)">¶</a></h2><p><strong>Domain Experts (Subject Matter Experts)</strong> provide specialized knowledge about the field and help ensure that results are meaningful and realistic.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Provide <strong>context and domain knowledge</strong></li>
+<li>Help identify which variables and features are important</li>
+<li>Interpret results and determine if they <strong>make sense in the real world</strong></li>
+<li>Suggest improvements based on industry knowledge</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Healthcare professionals (doctors, nurses)</li>
+<li>Financial analysts</li>
+<li>Engineers</li>
+<li>Retail or marketing specialists</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=581fdf63-8cae-43af-8364-a5402b8249f6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Data-Engineers">Data Engineers<a class="anchor-link" href="#Data-Engineers">¶</a></h2><p><strong>Data engineers</strong> build and maintain the systems that collect, store, and process data.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Build <strong>data pipelines</strong> to collect and move data</li>
+<li>Manage <strong>databases and data warehouses</strong></li>
+<li>Ensure data is <strong>reliable, accessible, and scalable</strong></li>
+<li>Prepare data for <strong>analysis and modeling</strong></li>
+</ul>
+<p><strong>Tools often used:</strong></p>
+<ul>
+<li>SQL</li>
+<li>Distributed data systems</li>
+<li>Data pipelines and ETL workflows</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17ee16fc-a9df-4a40-9764-14f0d7cdee38">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Data-Scientists-/-Statisticians">Data Scientists / Statisticians<a class="anchor-link" href="#Data-Scientists-/-Statisticians">¶</a></h2><p><strong>Data scientists and statisticians</strong> analyze data to extract insights and build predictive models.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Explore and analyze datasets</li>
+<li>Apply <strong>statistical methods</strong> and <strong>machine learning</strong></li>
+<li>Build and evaluate predictive models</li>
+<li>Interpret results and generate insights</li>
+</ul>
+<p><strong>Common tools:</strong></p>
+<ul>
+<li>Python or R</li>
+<li>Statistical modeling</li>
+<li>Machine learning methods</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c111bb21-9174-4615-9a2a-d545a15db765">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Data-Analysts">Data Analysts<a class="anchor-link" href="#Data-Analysts">¶</a></h2><p><strong>Data analysts</strong> focus on exploring data and communicating insights that support decision-making.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Query and analyze data</li>
+<li>Create <strong>reports and dashboards</strong></li>
+<li>Visualize data to highlight trends</li>
+<li>Communicate insights to stakeholders</li>
+</ul>
+<p><strong>Common tools:</strong></p>
+<ul>
+<li>SQL</li>
+<li>Excel or spreadsheets</li>
+<li>Data visualization tools (e.g., Tableau, Power BI)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e75681e7-e2b0-4f3c-8eef-6c6a8e90a248">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Machine-Learning-Engineers">Machine Learning Engineers<a class="anchor-link" href="#Machine-Learning-Engineers">¶</a></h2><p><strong>Machine learning engineers</strong> focus on deploying and maintaining models in real-world systems.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Deploy models into <strong>applications or production systems</strong></li>
+<li>Build <strong>APIs and services</strong> for model predictions</li>
+<li>Monitor <strong>model performance over time</strong></li>
+<li>Retrain and update models as new data arrives</li>
+</ul>
+<p><strong>Common tools</strong></p>
+<ul>
+<li>Python</li>
+<li>Cloud platforms</li>
+<li>Model serving and monitoring tools</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 </main>
