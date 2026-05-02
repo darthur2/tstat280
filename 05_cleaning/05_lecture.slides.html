@@ -7456,7 +7456,7 @@ main {
 <li>Handle duplicated, missing, and incomplete data</li>
 <li>Clean and pre-process text data</li>
 <li>Convert and manipulate data types</li>
-<li>Utilize method chaining</li>
+<li>Utilize method chaining when cleaning</li>
 <li>Standardize and validate data</li>
 <li>Check for outliers or anomalous values</li>
 </ol>
@@ -8834,7 +8834,7 @@ Name: total_rating, Length: 130, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Standardizing-Scales-(Part-I)">Standardizing Scales (Part I)<a class="anchor-link" href="#Standardizing-Scales-(Part-I)">¶</a></h2><p>Different sources may report information using different metrics. In this case, it will be necessary to standardize the scales. First, we might want to determine the unit of measurement for each item. One way to do this is using <code>df["column"].contains("pattern")</code>.</p>
+<h2 id="Standardizing-Scales-(Part-I)">Standardizing Scales (Part I)<a class="anchor-link" href="#Standardizing-Scales-(Part-I)">¶</a></h2><p>Different sources may report information using different metrics. In this case, it will be necessary to standardize the scales. First, we might want to determine the unit of measurement for each item. One way to do this is using <code>df["column"].str.contains("pattern")</code>.</p>
 </div>
 </div>
 </div>
@@ -8895,6 +8895,7 @@ Name: screen_size, Length: 130, dtype: bool</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">CM_TO_IN</span> <span class="o">=</span> <span class="mf">0.393701</span>
+
 <span class="n">screen_multiplier</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">"screen_size"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">"Centimetres"</span><span class="p">)</span><span class="o">.</span>
     <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">boolean</span><span class="p">:</span> <span class="n">CM_TO_IN</span> <span class="k">if</span> <span class="n">boolean</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
@@ -8995,12 +8996,12 @@ Name: screen_size, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b833b835-0653-4f43-951c-989fcdb16718">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b833b835-0653-4f43-951c-989fcdb16718">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">colour_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -9073,27 +9074,6 @@ Name: screen_size, dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array(['Luna Grey', 'Gray', 'Steel Gray', 'Black', 'Mica Silver',
-       'Silver', 'Iron Grey', None, 'Mecha Gray', 'Natural Silver',
-       'Blue', 'Graphite Black', 'Platinum Silver', 'Grey', 'Mixed Black',
-       'Cloud Grey', 'Off Black', 'Eclipse Gray', 'Glacier Silver',
-       'Quiet Blue', 'Performance Blue', 'Cool Silver', 'Shadow Black',
-       'Carbon Grey', 'Core Black', 'Space Black', 'Green',
-       'Turbo Silver', 'Ice Blue', 'Aqua', 'Eclipse Black',
-       'Platinum Grey', 'Eclipse Grey', 'Graphite', 'Pure White',
-       'Jaeger Gray', 'Arctic Grey', 'Scandinavian White', 'Ash Grey',
-       'Platinum', 'Stellar Gray', 'Steel Grey'], dtype=object)</pre>
-</div>
-</div>
-</div>
-</div>
 </div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07bb4961-1803-40b9-843e-9dba7bc935aa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9105,12 +9085,12 @@ Name: screen_size, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ee8ab7d7-6008-40b5-8ccd-761b413a80a9">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ee8ab7d7-6008-40b5-8ccd-761b413a80a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"price"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"price"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"float"</span><span class="p">)</span>
@@ -9121,146 +9101,6 @@ Name: screen_size, dtype: float64</pre>
 
 <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"price"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">))</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"price"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">))]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>rating</th>
-<th>total_rating</th>
-<th>price</th>
-<th>offer</th>
-<th>mrp</th>
-<th>brand</th>
-<th>model_name</th>
-<th>screen_size</th>
-<th>colour</th>
-<th>hard_disk_size</th>
-<th>cpu_model</th>
-<th>ram</th>
-<th>os</th>
-<th>special_features</th>
-<th>graphics_card</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>36</th>
-<td>5.000000</td>
-<td>(1)</td>
-<td>499990.0</td>
-<td>-20%</td>
-<td>₹4,84,990</td>
-<td>Alienware</td>
-<td>Alienware 16 Area-51 Gaming Laptop</td>
-<td>16.000000</td>
-<td>Black</td>
-<td>2 TB</td>
-<td>Intel Core Ultra 9</td>
-<td>64 GB</td>
-<td>Windows 11 Home</td>
-<td>RGB lighting</td>
-<td>Dedicated</td>
-</tr>
-<tr>
-<th>40</th>
-<td>4.100000</td>
-<td>(9)</td>
-<td>449990.0</td>
-<td>-12%</td>
-<td>₹4,49,990</td>
-<td>ASUS</td>
-<td>ROG Strix SCAR 18</td>
-<td>18.000000</td>
-<td>Off Black</td>
-<td>2 TB</td>
-<td>Intel Core Ultra 9</td>
-<td>64 GB</td>
-<td>Windows 11 Home</td>
-<td>1080P FHD IR Camera for Windows Hello, Anti-gl...</td>
-<td>Dedicated</td>
-</tr>
-<tr>
-<th>41</th>
-<td>3.800000</td>
-<td>(16)</td>
-<td>229990.0</td>
-<td>-6%</td>
-<td>₹2,59,990</td>
-<td>ASUS</td>
-<td>ROG Strix G16</td>
-<td>16.000000</td>
-<td>Eclipse Gray</td>
-<td>1 TB</td>
-<td>Intel Core Ultra 9</td>
-<td>32 GB</td>
-<td>Windows 11 Home</td>
-<td>1080P FHD IR Camera for Windows Hello, Anti-gl...</td>
-<td>Dedicated</td>
-</tr>
-<tr>
-<th>70</th>
-<td>2.400000</td>
-<td>(2)</td>
-<td>484990.0</td>
-<td>NaN</td>
-<td>₹6,17,990</td>
-<td>MSI</td>
-<td>Titan 18 HX AI A2XWJG</td>
-<td>18.110246</td>
-<td>Core Black</td>
-<td>6 TB</td>
-<td>Intel Core Ultra 9</td>
-<td>96 GB</td>
-<td>Windows 11 Home</td>
-<td>Advanced Cooling System, AI-Enabled Processor,...</td>
-<td>Dedicated</td>
-</tr>
-<tr>
-<th>81</th>
-<td>3.871667</td>
-<td>NaN</td>
-<td>251500.0</td>
-<td>-14%</td>
-<td>₹2,99,999</td>
-<td>Lenovo</td>
-<td>ThinkPad P16v Gen 2</td>
-<td>16.000000</td>
-<td>Black</td>
-<td>1 TB</td>
-<td>Intel Core Ultra 9</td>
-<td>32 GB</td>
-<td>Windows 11 Pro</td>
-<td>Anti Glare Coating, Low Blue Light</td>
-<td>RTX 3000 Ada Generation</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -9276,39 +9116,16 @@ Name: screen_size, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cd5001a7-1ff4-46c1-9a8c-a9f8b934086a">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cd5001a7-1ff4-46c1-9a8c-a9f8b934086a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"mrp"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s2">"([₹,])"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0      81990
-1      39999
-2      12090
-3      30990
-4      94990
-       ...  
-201    13990
-202    33490
-203      NaN
-205      NaN
-206    31770
-Name: mrp, Length: 130, dtype: object</pre>
 </div>
 </div>
 </div>
@@ -9324,97 +9141,16 @@ Name: mrp, Length: 130, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=56fef7a0-765b-4931-ad2b-b5b508390f24">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=56fef7a0-765b-4931-ad2b-b5b508390f24">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"hard_disk_size"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">"([A-Za-z]+)"</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>1</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>2</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>3</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>4</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-</tr>
-<tr>
-<th>201</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>202</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>203</th>
-<td>GB</td>
-</tr>
-<tr>
-<th>205</th>
-<td>TB</td>
-</tr>
-<tr>
-<th>206</th>
-<td>GB</td>
-</tr>
-</tbody>
-</table>
-<p>130 rows × 1 columns</p>
-</div>
 </div>
 </div>
 </div>
@@ -9430,12 +9166,12 @@ Name: mrp, Length: 130, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a573fdb3-9918-4357-8020-901d04ddd122">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a573fdb3-9918-4357-8020-901d04ddd122">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
@@ -9450,99 +9186,6 @@ Name: mrp, Length: 130, dtype: object</pre>
 <span class="s2">                              Silver|Blue|Aura|silver|blue|Green|</span>
 <span class="s2">                              Aqua|GREY|White|Platinum)?"""</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0</th>
-<th>1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>Luna</td>
-<td>Grey</td>
-</tr>
-<tr>
-<th>1</th>
-<td>NaN</td>
-<td>Gray</td>
-</tr>
-<tr>
-<th>2</th>
-<td>NaN</td>
-<td>Gray</td>
-</tr>
-<tr>
-<th>3</th>
-<td>Steel</td>
-<td>Gray</td>
-</tr>
-<tr>
-<th>4</th>
-<td>NaN</td>
-<td>Black</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>201</th>
-<td>NaN</td>
-<td>Black</td>
-</tr>
-<tr>
-<th>202</th>
-<td>NaN</td>
-<td>Silver</td>
-</tr>
-<tr>
-<th>203</th>
-<td>NaN</td>
-<td>Black</td>
-</tr>
-<tr>
-<th>205</th>
-<td>NaN</td>
-<td>Black</td>
-</tr>
-<tr>
-<th>206</th>
-<td>Cloud</td>
-<td>Grey</td>
-</tr>
-</tbody>
-</table>
-<p>130 rows × 2 columns</p>
-</div>
 </div>
 </div>
 </div>
